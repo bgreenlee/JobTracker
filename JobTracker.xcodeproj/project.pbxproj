@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
+		A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
+		A2E2CF9C1634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */; };
+		A2E2CF9E1634F40100CAF8F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CF9D1634F40100CAF8F9 /* main.m */; };
+		A2E2CFA21634F40100CAF8F9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFA01634F40100CAF8F9 /* Credits.rtf */; };
+		A2E2CFA51634F40100CAF8F9 /* JTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */; };
+		A2E2CFA81634F40100CAF8F9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */; };
+		A2E2CFB01634F40100CAF8F9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */; };
+		A2E2CFB11634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
+		A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */; };
+		A2E2CFBC1634F40100CAF8F9 /* JobTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */; };
+		A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */; };
+		A2F8C5281648CB88005FC856 /* elephant_icon_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C5261648CB88005FC856 /* elephant_icon_black.png */; };
+		A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C5271648CB88005FC856 /* elephant_icon_white.png */; };
+		A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */; };
+		A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */; };
+		A2F8C5301649E815005FC856 /* jt_sample.html in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52F1649E815005FC856 /* jt_sample.html */; };
+		A2F8C5331649EFC2005FC856 /* JTState.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F8C5321649EFC2005FC856 /* JTState.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2E2CFB21634F40100CAF8F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A2E2CF841634F40100CAF8F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A2E2CF8C1634F40100CAF8F9;
+			remoteInfo = JobTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A20F5B7A164E0FE80016E81A /* JTJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTJob.h; sourceTree = "<group>"; };
+		A20F5B7B164E0FE80016E81A /* JTJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJob.m; sourceTree = "<group>"; };
+		A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E2CF911634F40100CAF8F9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A2E2CF941634F40100CAF8F9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		A2E2CF951634F40100CAF8F9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A2E2CF961634F40100CAF8F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A2E2CF991634F40100CAF8F9 /* JobTracker-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JobTracker-Info.plist"; sourceTree = "<group>"; };
+		A2E2CF9B1634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2E2CF9D1634F40100CAF8F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A2E2CF9F1634F40100CAF8F9 /* JobTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JobTracker-Prefix.pch"; sourceTree = "<group>"; };
+		A2E2CFA11634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		A2E2CFA31634F40100CAF8F9 /* JTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTAppDelegate.h; sourceTree = "<group>"; };
+		A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTAppDelegate.m; sourceTree = "<group>"; };
+		A2E2CFA71634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobTrackerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A2E2CFB61634F40100CAF8F9 /* JobTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JobTrackerTests-Info.plist"; sourceTree = "<group>"; };
+		A2E2CFB81634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A2E2CFBA1634F40100CAF8F9 /* JobTrackerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobTrackerTests.h; sourceTree = "<group>"; };
+		A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobTrackerTests.m; sourceTree = "<group>"; };
+		A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTStatusMenu.h; sourceTree = "<group>"; };
+		A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTStatusMenu.m; sourceTree = "<group>"; };
+		A2F8C5261648CB88005FC856 /* elephant_icon_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_black.png; sourceTree = "<group>"; };
+		A2F8C5271648CB88005FC856 /* elephant_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_white.png; sourceTree = "<group>"; };
+		A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_black.png; sourceTree = "<group>"; };
+		A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_white.png; sourceTree = "<group>"; };
+		A2F8C52F1649E815005FC856 /* jt_sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jt_sample.html; sourceTree = "<group>"; };
+		A2F8C5311649EFC2005FC856 /* JTState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTState.h; sourceTree = "<group>"; };
+		A2F8C5321649EFC2005FC856 /* JTState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTState.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A2E2CF8A1634F40100CAF8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2E2CFAA1634F40100CAF8F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CFB01634F40100CAF8F9 /* SenTestingKit.framework in Frameworks */,
+				A2E2CFB11634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A2E2CF821634F40100CAF8F9 = {
+			isa = PBXGroup;
+			children = (
+				A2E2CF971634F40100CAF8F9 /* JobTracker */,
+				A2E2CFB41634F40100CAF8F9 /* JobTrackerTests */,
+				A2E2CF901634F40100CAF8F9 /* Frameworks */,
+				A2E2CF8E1634F40100CAF8F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A2E2CF8E1634F40100CAF8F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */,
+				A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A2E2CF901634F40100CAF8F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CF911634F40100CAF8F9 /* Cocoa.framework */,
+				A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */,
+				A2E2CF931634F40100CAF8F9 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2E2CF931634F40100CAF8F9 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CF941634F40100CAF8F9 /* AppKit.framework */,
+				A2E2CF951634F40100CAF8F9 /* CoreData.framework */,
+				A2E2CF961634F40100CAF8F9 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		A2E2CF971634F40100CAF8F9 /* JobTracker */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CFA31634F40100CAF8F9 /* JTAppDelegate.h */,
+				A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */,
+				A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */,
+				A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */,
+				A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */,
+				A2F8C5311649EFC2005FC856 /* JTState.h */,
+				A2F8C5321649EFC2005FC856 /* JTState.m */,
+				A20F5B7A164E0FE80016E81A /* JTJob.h */,
+				A20F5B7B164E0FE80016E81A /* JTJob.m */,
+				A2F8C52A1648CB8D005FC856 /* Icons */,
+				A2E2CF981634F40100CAF8F9 /* Supporting Files */,
+			);
+			path = JobTracker;
+			sourceTree = "<group>";
+		};
+		A2E2CF981634F40100CAF8F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CF991634F40100CAF8F9 /* JobTracker-Info.plist */,
+				A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */,
+				A2E2CF9D1634F40100CAF8F9 /* main.m */,
+				A2E2CF9F1634F40100CAF8F9 /* JobTracker-Prefix.pch */,
+				A2E2CFA01634F40100CAF8F9 /* Credits.rtf */,
+				A2F8C52F1649E815005FC856 /* jt_sample.html */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A2E2CFB41634F40100CAF8F9 /* JobTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CFBA1634F40100CAF8F9 /* JobTrackerTests.h */,
+				A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */,
+				A2E2CFB51634F40100CAF8F9 /* Supporting Files */,
+			);
+			path = JobTrackerTests;
+			sourceTree = "<group>";
+		};
+		A2E2CFB51634F40100CAF8F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2E2CFB61634F40100CAF8F9 /* JobTrackerTests-Info.plist */,
+				A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A2F8C52A1648CB8D005FC856 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */,
+				A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */,
+				A2F8C5261648CB88005FC856 /* elephant_icon_black.png */,
+				A2F8C5271648CB88005FC856 /* elephant_icon_white.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A2E2CF8C1634F40100CAF8F9 /* JobTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2E2CFBF1634F40100CAF8F9 /* Build configuration list for PBXNativeTarget "JobTracker" */;
+			buildPhases = (
+				A2E2CF891634F40100CAF8F9 /* Sources */,
+				A2E2CF8A1634F40100CAF8F9 /* Frameworks */,
+				A2E2CF8B1634F40100CAF8F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobTracker;
+			productName = JobTracker;
+			productReference = A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A2E2CFAD1634F40100CAF8F9 /* JobTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2E2CFC21634F40100CAF8F9 /* Build configuration list for PBXNativeTarget "JobTrackerTests" */;
+			buildPhases = (
+				A2E2CFA91634F40100CAF8F9 /* Sources */,
+				A2E2CFAA1634F40100CAF8F9 /* Frameworks */,
+				A2E2CFAB1634F40100CAF8F9 /* Resources */,
+				A2E2CFAC1634F40100CAF8F9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2E2CFB31634F40100CAF8F9 /* PBXTargetDependency */,
+			);
+			name = JobTrackerTests;
+			productName = JobTrackerTests;
+			productReference = A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A2E2CF841634F40100CAF8F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JT;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Hack Arts";
+			};
+			buildConfigurationList = A2E2CF871634F40100CAF8F9 /* Build configuration list for PBXProject "JobTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A2E2CF821634F40100CAF8F9;
+			productRefGroup = A2E2CF8E1634F40100CAF8F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2E2CF8C1634F40100CAF8F9 /* JobTracker */,
+				A2E2CFAD1634F40100CAF8F9 /* JobTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A2E2CF8B1634F40100CAF8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CF9C1634F40100CAF8F9 /* InfoPlist.strings in Resources */,
+				A2E2CFA21634F40100CAF8F9 /* Credits.rtf in Resources */,
+				A2E2CFA81634F40100CAF8F9 /* MainMenu.xib in Resources */,
+				A2F8C5281648CB88005FC856 /* elephant_icon_black.png in Resources */,
+				A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */,
+				A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */,
+				A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */,
+				A2F8C5301649E815005FC856 /* jt_sample.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2E2CFAB1634F40100CAF8F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A2E2CFAC1634F40100CAF8F9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A2E2CF891634F40100CAF8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CF9E1634F40100CAF8F9 /* main.m in Sources */,
+				A2E2CFA51634F40100CAF8F9 /* JTAppDelegate.m in Sources */,
+				A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */,
+				A2F8C5331649EFC2005FC856 /* JTState.m in Sources */,
+				A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2E2CFA91634F40100CAF8F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2E2CFBC1634F40100CAF8F9 /* JobTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2E2CFB31634F40100CAF8F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A2E2CF8C1634F40100CAF8F9 /* JobTracker */;
+			targetProxy = A2E2CFB21634F40100CAF8F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2E2CF9B1634F40100CAF8F9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A2E2CFA01634F40100CAF8F9 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2E2CFA11634F40100CAF8F9 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2E2CFA71634F40100CAF8F9 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2E2CFB81634F40100CAF8F9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A2E2CFBD1634F40100CAF8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A2E2CFBE1634F40100CAF8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A2E2CFC01634F40100CAF8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
+				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A2E2CFC11634F40100CAF8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
+				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A2E2CFC31634F40100CAF8F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JobTracker.app/Contents/MacOS/JobTracker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
+				INFOPLIST_FILE = "JobTrackerTests/JobTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		A2E2CFC41634F40100CAF8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JobTracker.app/Contents/MacOS/JobTracker";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
+				INFOPLIST_FILE = "JobTrackerTests/JobTrackerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A2E2CF871634F40100CAF8F9 /* Build configuration list for PBXProject "JobTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E2CFBD1634F40100CAF8F9 /* Debug */,
+				A2E2CFBE1634F40100CAF8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2E2CFBF1634F40100CAF8F9 /* Build configuration list for PBXNativeTarget "JobTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E2CFC01634F40100CAF8F9 /* Debug */,
+				A2E2CFC11634F40100CAF8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2E2CFC21634F40100CAF8F9 /* Build configuration list for PBXNativeTarget "JobTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E2CFC31634F40100CAF8F9 /* Debug */,
+				A2E2CFC41634F40100CAF8F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A2E2CF841634F40100CAF8F9 /* Project object */;
+}
