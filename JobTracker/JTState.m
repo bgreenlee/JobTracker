@@ -7,35 +7,44 @@
 //
 
 #import "JTState.h"
+#import "JTPageLoadOperation.h"
 
 @implementation JTState
+static JTState *shared;
 
-@synthesize clusterSummary, jobs;
+@synthesize clusterSummary, jobs, url, usernames, delegate;
 
 - (id)init {
+    if (shared) {
+        return shared;
+    }
     if ((self = [super init])) {
         clusterSummary = [[NSMutableDictionary alloc] init];
         jobs = [[NSMutableDictionary alloc] init];
     }
+    queue = [[NSOperationQueue alloc] init];
+    shared = self;
     return self;
 }
 
-- (void)refresh {
-    NSError *err;
-    NSXMLDocument *document = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL URLWithString:JT_URL]
-                                                                   options:NSXMLDocumentTidyHTML error:&err];
-    
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"jt_sample" ofType:@"html"];
-//    NSData *data = [NSData dataWithContentsOfFile:filePath];
-//    NSXMLDocument *document = [[NSXMLDocument alloc] initWithData:data options:NSXMLDocumentTidyHTML error:nil];
-    
-    if (err) {
-        NSLog(@"ERROR: %@", err);
+- (id)initWithURL:(NSURL *)_url withUsernames:(NSString *)_usernames{
+    self = [self init];
+    url = _url;
+    if (_usernames == nil || [_usernames isEqualToString:@""]) {
+        usernames = nil;
+    } else {
+        usernames = [_usernames componentsSeparatedByString:@","];
     }
+    return self;
+}
 
-    if (document) {
-        [self parse:document];
-    }
+- (void)pageLoaded:(NSXMLDocument *)document {
+    [self parse:document];
+}
+
+- (void)refresh {
+    JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
+    [queue addOperation:plo];
 }
 
 - (void)parse:(NSXMLDocument *)document {
@@ -57,7 +66,7 @@
         }
     }
     
-    NSLog(@"cluster summary: %@", clusterSummary);
+    //NSLog(@"cluster summary: %@", clusterSummary);
     
     // Jobs tables
     NSArray *dataTables = [document nodesForXPath:@".//table[@class='datatable']" error:nil];
@@ -76,11 +85,15 @@
                 NSString *value = [[[jobCells objectAtIndex:idx] stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [jobData setObject:value forKey:attrib];
             }];
-            [jobList addObject:[[JTJob alloc] initWithDictionary:jobData]];
+            JTJob *job = [[JTJob alloc] initWithDictionary:jobData];
+            if (self.usernames == nil || [self.usernames count] == 0 || [self.usernames containsObject:job.user]) {
+                [jobList addObject:job];
+            }
         }
         [jobs setObject:jobList forKey:jobType];
     }];
     
-    NSLog(@"jobs: %@", jobs);
+    [self.delegate stateUpdated];
+//    NSLog(@"jobs: %@", jobs);
 }
 @end

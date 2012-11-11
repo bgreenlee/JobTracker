@@ -1306,6 +1306,7 @@
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
+						<int key="NSTag">4</int>
 					</object>
 					<object class="NSMenuItem" id="46693554">
 						<reference key="NSMenu" ref="396677008"/>
@@ -1399,6 +1400,24 @@
 					<object class="NSMenuItem" id="901039171">
 						<reference key="NSMenu" ref="396677008"/>
 						<string key="NSTitle">Open in Browser</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="1023429067">
+						<reference key="NSMenu" ref="396677008"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="386846552">
+						<reference key="NSMenu" ref="396677008"/>
+						<string key="NSTitle">Preferences...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -2131,6 +2150,14 @@
 						<reference key="destination" ref="901039171"/>
 					</object>
 					<int key="connectionID">570</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showPreferences:</string>
+						<reference key="source" ref="561151048"/>
+						<reference key="destination" ref="386846552"/>
+					</object>
+					<int key="connectionID">574</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3131,6 +3158,8 @@
 							<reference ref="1005037032"/>
 							<reference ref="901039171"/>
 							<reference ref="725545184"/>
+							<reference ref="386846552"/>
+							<reference ref="1023429067"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3231,6 +3260,16 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">565</int>
 						<reference key="object" ref="725545184"/>
+						<reference key="parent" ref="396677008"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">571</int>
+						<reference key="object" ref="386846552"/>
+						<reference key="parent" ref="396677008"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">572</int>
+						<reference key="object" ref="1023429067"/>
 						<reference key="parent" ref="396677008"/>
 					</object>
 				</array>
@@ -3392,6 +3431,8 @@
 				<string key="564.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="565.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="571.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="572.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3409,7 +3450,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">570</int>
+			<int key="maxID">574</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3438,6 +3479,7 @@
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="openInBrowser:">id</string>
 						<string key="refresh:">id</string>
+						<string key="showPreferences:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="openInBrowser:">
@@ -3446,6 +3488,10 @@
 						</object>
 						<object class="IBActionInfo" key="refresh:">
 							<string key="name">refresh:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="showPreferences:">
+							<string key="name">showPreferences:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

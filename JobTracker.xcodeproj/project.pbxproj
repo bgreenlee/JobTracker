@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
+		A2C757AD164E303D001B0618 /* JTPageLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */; };
+		A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */; };
+		A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */; };
+		A2C757BB164FEE2A001B0618 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B9164FEE2A001B0618 /* LaunchAtLoginController.m */; };
+		A2C757BC164FEE2A001B0618 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C757BA164FEE2A001B0618 /* README.md */; };
 		A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
 		A2E2CF9C1634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */; };
 		A2E2CF9E1634F40100CAF8F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CF9D1634F40100CAF8F9 /* main.m */; };
@@ -40,6 +45,14 @@
 /* Begin PBXFileReference section */
 		A20F5B7A164E0FE80016E81A /* JTJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTJob.h; sourceTree = "<group>"; };
 		A20F5B7B164E0FE80016E81A /* JTJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJob.m; sourceTree = "<group>"; };
+		A2C757AB164E303D001B0618 /* JTPageLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPageLoadOperation.h; sourceTree = "<group>"; };
+		A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPageLoadOperation.m; sourceTree = "<group>"; };
+		A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		A2C757B3164FEB43001B0618 /* JTPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPreferencesWindowController.h; sourceTree = "<group>"; };
+		A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPreferencesWindowController.m; sourceTree = "<group>"; };
+		A2C757B8164FEE2A001B0618 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
+		A2C757B9164FEE2A001B0618 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
+		A2C757BA164FEE2A001B0618 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E2CF911634F40100CAF8F9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A2E2CF941634F40100CAF8F9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -91,6 +104,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2C757B6164FEDDF001B0618 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A2C757B7164FEE2A001B0618 /* LaunchAtLoginController */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		A2C757B7164FEE2A001B0618 /* LaunchAtLoginController */ = {
+			isa = PBXGroup;
+			children = (
+				A2C757B8164FEE2A001B0618 /* LaunchAtLoginController.h */,
+				A2C757B9164FEE2A001B0618 /* LaunchAtLoginController.m */,
+				A2C757BA164FEE2A001B0618 /* README.md */,
+			);
+			path = LaunchAtLoginController;
+			sourceTree = "<group>";
+		};
 		A2E2CF821634F40100CAF8F9 = {
 			isa = PBXGroup;
 			children = (
@@ -135,13 +166,19 @@
 			children = (
 				A2E2CFA31634F40100CAF8F9 /* JTAppDelegate.h */,
 				A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */,
-				A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */,
 				A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */,
 				A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */,
 				A2F8C5311649EFC2005FC856 /* JTState.h */,
 				A2F8C5321649EFC2005FC856 /* JTState.m */,
 				A20F5B7A164E0FE80016E81A /* JTJob.h */,
 				A20F5B7B164E0FE80016E81A /* JTJob.m */,
+				A2C757AB164E303D001B0618 /* JTPageLoadOperation.h */,
+				A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */,
+				A2C757B3164FEB43001B0618 /* JTPreferencesWindowController.h */,
+				A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */,
+				A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */,
+				A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */,
+				A2C757B6164FEDDF001B0618 /* Other Sources */,
 				A2F8C52A1648CB8D005FC856 /* Icons */,
 				A2E2CF981634F40100CAF8F9 /* Supporting Files */,
 			);
@@ -271,6 +308,8 @@
 				A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */,
 				A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */,
 				A2F8C5301649E815005FC856 /* jt_sample.html in Resources */,
+				A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */,
+				A2C757BC164FEE2A001B0618 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +349,9 @@
 				A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */,
 				A2F8C5331649EFC2005FC856 /* JTState.m in Sources */,
 				A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */,
+				A2C757AD164E303D001B0618 /* JTPageLoadOperation.m in Sources */,
+				A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */,
+				A2C757BB164FEE2A001B0618 /* LaunchAtLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
