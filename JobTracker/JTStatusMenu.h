@@ -10,6 +10,7 @@
 #import "JTState.h"
 #import "JTJob.h"
 #import "JTPreferencesWindowController.h"
+#import "Growl/GrowlApplicationBridge.h"
 
 #define RUNNING_JOBS_TAG 1
 #define COMPLETED_JOBS_TAG 2
@@ -17,7 +18,7 @@
 #define REFRESH_TAG 4
 #define REFRESH_INTERVAL 5
 
-@interface JTStatusMenu : NSObject <JTPreferencesDelegate, JTStateDelegate, NSUserNotificationCenterDelegate> {
+@interface JTStatusMenu : NSObject <JTPreferencesDelegate, JTStateDelegate, GrowlApplicationBridgeDelegate> {
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
     NSImage *statusImage;
@@ -27,7 +28,6 @@
     JTPreferencesWindowController *prefs;
     NSTimer *refreshTimer;
     NSInteger refreshInterval;
-    NSUserNotificationCenter *notificationCenter;
 }
 
 @property(nonatomic, copy) NSString *jobTrackerURL;
@@ -51,7 +51,7 @@
 - (void)jobStarted:(JTJob *)job;
 - (void)jobCompleted:(JTJob *)job;
 - (void)jobFailed:(JTJob *)job;
-// NSUserNotificationCenterDelegate methods
-- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification;
+// GrowlApplicationBridgeDelegate methods
+- (void) growlNotificationWasClicked:(id)clickContext;
 
 @end

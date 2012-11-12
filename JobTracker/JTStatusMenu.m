@@ -31,8 +31,7 @@ failedJobNotificationsEnabled;
                                                                name:NSWorkspaceDidWakeNotification
                                                              object:nil];
     
-    notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
-    notificationCenter.delegate = self;
+    [GrowlApplicationBridge setGrowlDelegate:self];
     
     [self loadPreferences];
     if ([self isConfigured]) {
@@ -43,12 +42,6 @@ failedJobNotificationsEnabled;
     } else {
         [self showPreferences:nil];
     }
-    
-//    NSUserNotification *notification = [[NSUserNotification alloc] init];
-//    notification.title = @"Testing";
-//    notification.informativeText = @"This is just a test";
-//    notification.soundName = NSUserNotificationDefaultSoundName;
-//    [notificationCenter deliverNotification:notification];
 }
 
 - (void)loadPreferences {
@@ -114,20 +107,19 @@ failedJobNotificationsEnabled;
     [self endRefresh];
 }
 
-- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
-    NSString *jobId = [notification.userInfo objectForKey:@"jobId"];
+- (void) growlNotificationWasClicked:(id)clickContext {
+    NSString *jobId = [clickContext objectForKey:@"jobId"];
     [self openJobInBrowser:jobId];
-    
 }
 
 - (void)sendNotificationWithTitle:(NSString *)title withJob:(JTJob *)job {
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = title;
-    notification.informativeText = job.displayName;
-    notification.userInfo = [NSDictionary dictionaryWithObject:job.jobId forKey:@"jobId"];
-    notification.soundName = NSUserNotificationDefaultSoundName;
-    
-    [notificationCenter deliverNotification:notification];
+    [GrowlApplicationBridge notifyWithTitle:title
+                                description:job.displayName
+                           notificationName:title
+                                   iconData:nil
+                                   priority:0
+                                   isSticky:NO
+                               clickContext:[NSDictionary dictionaryWithObject:job.jobId forKey:@"jobId"]];
 }
 
 - (void)jobStarted:(JTJob *)job {

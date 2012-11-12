@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
+		A29601FB16516FBE00388031 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A29601FA16516FBE00388031 /* Growl.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */; };
+		A2960201165174D700388031 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A29601FA16516FBE00388031 /* Growl.framework */; };
 		A2C757AD164E303D001B0618 /* JTPageLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */; };
 		A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */; };
 		A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */; };
@@ -43,9 +46,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A2960200165174BF00388031 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2960201165174D700388031 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A20F5B7A164E0FE80016E81A /* JTJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTJob.h; sourceTree = "<group>"; };
 		A20F5B7B164E0FE80016E81A /* JTJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJob.m; sourceTree = "<group>"; };
+		A29601FA16516FBE00388031 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = "../../Downloads/Growl-2.0-SDK/Framework/Growl.framework"; sourceTree = "<group>"; };
+		A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		A2C757AB164E303D001B0618 /* JTPageLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPageLoadOperation.h; sourceTree = "<group>"; };
 		A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPageLoadOperation.m; sourceTree = "<group>"; };
 		A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
@@ -91,6 +109,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
+				A29601FB16516FBE00388031 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +165,7 @@
 		A2E2CF901634F40100CAF8F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A29601FA16516FBE00388031 /* Growl.framework */,
 				A2E2CF911634F40100CAF8F9 /* Cocoa.framework */,
 				A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */,
 				A2E2CF931634F40100CAF8F9 /* Other Frameworks */,
@@ -197,6 +217,7 @@
 				A2E2CF9F1634F40100CAF8F9 /* JobTracker-Prefix.pch */,
 				A2E2CFA01634F40100CAF8F9 /* Credits.rtf */,
 				A2F8C52F1649E815005FC856 /* jt_sample.html */,
+				A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -241,6 +262,7 @@
 				A2E2CF891634F40100CAF8F9 /* Sources */,
 				A2E2CF8A1634F40100CAF8F9 /* Frameworks */,
 				A2E2CF8B1634F40100CAF8F9 /* Resources */,
+				A2960200165174BF00388031 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -314,6 +336,7 @@
 				A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */,
 				A2C757BC164FEE2A001B0618 /* README.md in Resources */,
 				A2C757C61650BA6C001B0618 /* JobTracker.icns in Resources */,
+				A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +493,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/Growl-2.0-SDK/Framework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -482,9 +510,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/Growl-2.0-SDK/Framework\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
