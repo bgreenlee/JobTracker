@@ -44,11 +44,11 @@ failedJobNotificationsEnabled;
         [self showPreferences:nil];
     }
     
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Testing";
-    notification.informativeText = @"This is just a test";
-    notification.soundName = NSUserNotificationDefaultSoundName;
-    [notificationCenter deliverNotification:notification];
+//    NSUserNotification *notification = [[NSUserNotification alloc] init];
+//    notification.title = @"Testing";
+//    notification.informativeText = @"This is just a test";
+//    notification.soundName = NSUserNotificationDefaultSoundName;
+//    [notificationCenter deliverNotification:notification];
 }
 
 - (void)loadPreferences {
