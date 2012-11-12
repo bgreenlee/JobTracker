@@ -11,7 +11,8 @@
 
 @implementation JTStatusMenu
 
-@synthesize jobTrackerURL, usernames;
+@synthesize jobTrackerURL, usernames, startingJobNotificationsEnabled, completedJobNotificationsEnabled,
+failedJobNotificationsEnabled;
 
 - (void)awakeFromNib {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
@@ -29,6 +30,10 @@
                                                            selector:@selector(receiveWakeNote:)
                                                                name:NSWorkspaceDidWakeNotification
                                                              object:nil];
+    
+    notificationCenter = [NSUserNotificationCenter defaultUserNotificationCenter];
+    notificationCenter.delegate = self;
+    
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [[JTState alloc] initWithURL:[NSURL URLWithString:jobTrackerURL] withUsernames:usernames];
@@ -38,12 +43,21 @@
     } else {
         [self showPreferences:nil];
     }
+    
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Testing";
+    notification.informativeText = @"This is just a test";
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    [notificationCenter deliverNotification:notification];
 }
 
 - (void)loadPreferences {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     jobTrackerURL = [defaults stringForKey:@"jobTrackerURL"];
     usernames = [defaults stringForKey:@"usernames"];
+    startingJobNotificationsEnabled = [defaults boolForKey:@"startingJobNotificationsEnabled"];
+    completedJobNotificationsEnabled = [defaults boolForKey:@"completedJobNotificationsEnabled"];
+    failedJobNotificationsEnabled = [defaults boolForKey:@"failedJobNotificationsEnabled"];
 }
 
 - (BOOL)isConfigured {
@@ -100,6 +114,40 @@
     [self endRefresh];
 }
 
+- (void)userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+    NSString *jobId = [notification.userInfo objectForKey:@"jobId"];
+    [self openJobInBrowser:jobId];
+    
+}
+
+- (void)sendNotificationWithTitle:(NSString *)title withJob:(JTJob *)job {
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = title;
+    notification.informativeText = job.displayName;
+    notification.userInfo = [NSDictionary dictionaryWithObject:job.jobId forKey:@"jobId"];
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    
+    [notificationCenter deliverNotification:notification];
+}
+
+- (void)jobStarted:(JTJob *)job {
+    if (startingJobNotificationsEnabled) {
+        [self sendNotificationWithTitle:@"Job Started" withJob:job];
+    }
+}
+
+- (void)jobCompleted:(JTJob *)job {
+    if (completedJobNotificationsEnabled) {
+        [self sendNotificationWithTitle:@"Job Completed" withJob:job];
+    }
+}
+
+- (void)jobFailed:(JTJob *)job {
+    if (failedJobNotificationsEnabled) {
+        [self sendNotificationWithTitle:@"Job Failed" withJob:job];
+    }
+}
+
 - (IBAction)openInBrowser:(id)sender {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobTrackerURL]];
 }
@@ -139,7 +187,11 @@
 - (void)jobSelected:(id)sender {
     NSMenuItem *menuItem = sender;
     JTJob *job = [menuItem representedObject];
-    NSString *jobUrl = [NSString stringWithFormat:@"%@?job_id=%@", jobTrackerURL, job.jobId];
+    [self openJobInBrowser:job.jobId];
+}
+
+- (void)openJobInBrowser:(NSString *)jobId {
+    NSString *jobUrl = [NSString stringWithFormat:@"%@?job_id=%@", jobTrackerURL, jobId];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobUrl]];
 }
 

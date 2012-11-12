@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface JTAppDelegate : NSObject <NSApplicationDelegate>
+@interface JTAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 

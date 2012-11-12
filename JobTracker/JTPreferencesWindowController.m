@@ -15,7 +15,9 @@
 
 @implementation JTPreferencesWindowController
 
-@synthesize jobTrackerURLCell, usernamesCell, launchAtLoginPreference, okayButton, cancelButton, delegate;
+@synthesize jobTrackerURLCell, usernamesCell, startingJobNotificationPreference,
+    completedJobNotificationPreference, failedJobNotificationPreference, launchAtLoginPreference,
+    okayButton, cancelButton, delegate;
 
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
@@ -47,6 +49,11 @@
         [self.jobTrackerURLCell setStringValue:jobTrackerURL];
     }
 
+    
+    [self.startingJobNotificationPreference setState:[defaults boolForKey:@"startingJobNotificationsEnabled"] ? NSOnState : NSOffState];
+    [self.completedJobNotificationPreference setState:[defaults boolForKey:@"completedJobNotificationsEnabled"] ? NSOnState : NSOffState];
+    [self.failedJobNotificationPreference setState:[defaults boolForKey:@"failedJobNotificationsEnabled"] ? NSOnState : NSOffState];
+
     LaunchAtLoginController *launchController = [[LaunchAtLoginController alloc] init];
     BOOL launchAtLoginEnabled = [launchController launchAtLogin];
     
@@ -60,20 +67,25 @@
 - (IBAction)okayPressed:(id)sender {
     NSString *jobTrackerURL = [self.jobTrackerURLCell stringValue];
     NSString *usernames = [[self.usernamesCell stringValue] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    BOOL startingJobNotificationsEnabled = [self.startingJobNotificationPreference state] == NSOnState;
+    BOOL completedJobNotificationsEnabled = [self.completedJobNotificationPreference state] == NSOnState;
+    BOOL failedJobNotificationsEnabled = [self.failedJobNotificationPreference state] == NSOnState;
     BOOL launchOnLoginEnabled = [self.launchAtLoginPreference state] == NSOnState;
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     // Save the Launch-on-Login preference.
     LaunchAtLoginController *launchController = [[LaunchAtLoginController alloc] init];
 	[launchController setLaunchAtLogin:launchOnLoginEnabled];
     
-    // Save the jobTrackerURL
     [defaults setObject:jobTrackerURL forKey:@"jobTrackerURL"];
-    // Save the username.
     [defaults setObject:usernames forKey:@"usernames"];
-        
+    [defaults setBool:startingJobNotificationsEnabled forKey:@"startingJobNotificationsEnabled"];
+    [defaults setBool:completedJobNotificationsEnabled forKey:@"completedJobNotificationsEnabled"];
+    [defaults setBool:failedJobNotificationsEnabled forKey:@"failedJobNotificationsEnabled"];
+    
     [[self window] close];
-    [self.delegate preferencesUpdated];
+    [self.delegate preferencesUpdated];    
 }
 
 

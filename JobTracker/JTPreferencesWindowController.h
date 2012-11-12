@@ -12,6 +12,9 @@
 
 @property(nonatomic, retain) IBOutlet NSTextFieldCell *jobTrackerURLCell;
 @property(nonatomic, retain) IBOutlet NSTextFieldCell *usernamesCell;
+@property(nonatomic, retain) IBOutlet NSButton *startingJobNotificationPreference;
+@property(nonatomic, retain) IBOutlet NSButton *completedJobNotificationPreference;
+@property(nonatomic, retain) IBOutlet NSButton *failedJobNotificationPreference;
 @property(nonatomic, retain) IBOutlet NSButton *launchAtLoginPreference;
 @property(nonatomic, retain) IBOutlet NSButton *okayButton;
 @property(nonatomic, retain) IBOutlet NSButton *cancelButton;

@@ -40,5 +40,7 @@
 - (NSString *)reducesComplete;
 - (NSString *)jobSchedulingInfo;
 - (NSString *)diagnosticInfo;
+- (BOOL)isEqual:(id)other;
+- (NSUInteger)hash;
 
 @end

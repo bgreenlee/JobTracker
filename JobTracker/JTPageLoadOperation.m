@@ -13,8 +13,7 @@
 
 @synthesize targetURL;
 
-- (id)initWithURL:(NSURL *)url;
-{
+- (id)initWithURL:(NSURL *)url {
     if (![super init]) return nil;
     [self setTargetURL:url];
     return self;

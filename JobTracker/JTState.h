@@ -11,6 +11,8 @@
 
 @interface JTState : NSObject {
   	NSOperationQueue *queue;
+    NSArray *lastRunningJobs;
+    BOOL refreshRunning;
 }
 
 @property(nonatomic, retain) NSMutableDictionary *clusterSummary;
@@ -28,5 +30,8 @@
 @protocol JTStateDelegate
 
 - (void)stateUpdated;
+- (void)jobStarted:(JTJob *)job;
+- (void)jobCompleted:(JTJob *)job;
+- (void)jobFailed:(JTJob *)job;
 
 @end

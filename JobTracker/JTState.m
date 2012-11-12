@@ -43,8 +43,11 @@ static JTState *shared;
 }
 
 - (void)refresh {
-    JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
-    [queue addOperation:plo];
+    if (!refreshRunning) {
+        JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
+        [queue addOperation:plo];
+        refreshRunning = YES;
+    }
 }
 
 - (void)parse:(NSXMLDocument *)document {
@@ -93,7 +96,28 @@ static JTState *shared;
         [jobs setObject:jobList forKey:jobType];
     }];
     
+    // check/update last running job list
+    if (lastRunningJobs != nil) {
+        NSArray *runningJobs = [jobs objectForKey:@"running"];
+        for (JTJob *job in runningJobs) {
+            if (![lastRunningJobs containsObject:job]) {
+                [self.delegate jobStarted:job];
+            }
+        }
+        for (JTJob *job in lastRunningJobs) {
+            NSArray *completedJobs = [jobs objectForKey:@"completed"];
+            if ([completedJobs containsObject:job]) {
+                [self.delegate jobCompleted:job];
+            }
+            NSArray *failedJobs = [jobs objectForKey:@"failed"];
+            if ([failedJobs containsObject:job]) {
+                [self.delegate jobFailed:job];
+            }
+        }
+    }
+    lastRunningJobs = [jobs objectForKey:@"running"];
+    refreshRunning = NO;
     [self.delegate stateUpdated];
-//    NSLog(@"jobs: %@", jobs);
+    //    NSLog(@"jobs: %@", jobs);
 }
 @end

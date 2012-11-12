@@ -73,4 +73,18 @@ reducePctComplete, reduceTotal, reducesComplete, jobSchedulingInfo, diagnosticIn
     return [jobData objectForKey:@"diagnostic_info"];
 }
 
+- (BOOL)isEqual:(id)other {
+    if (other == self)
+        return YES;
+    if (!other || ![other isKindOfClass:[self class]])
+        return NO;
+    return [[self jobId] isEqualToString:[other jobId]];
+}
+
+- (NSUInteger)hash {
+    NSUInteger hash = 0;
+    hash += [[self jobId] hash];
+    return hash;
+}
+
 @end
