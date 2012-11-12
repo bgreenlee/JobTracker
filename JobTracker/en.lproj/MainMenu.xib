@@ -1332,7 +1332,7 @@
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="326557812">
 									<reference key="NSMenu" ref="696423410"/>
-									<string key="NSTitle">Item</string>
+									<string key="NSTitle">None</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -1355,7 +1355,7 @@
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="594357990">
 									<reference key="NSMenu" ref="280052289"/>
-									<string key="NSTitle">Item</string>
+									<string key="NSTitle">None</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -1378,7 +1378,7 @@
 							<array class="NSMutableArray" key="NSMenuItems">
 								<object class="NSMenuItem" id="462076528">
 									<reference key="NSMenu" ref="791295271"/>
-									<string key="NSTitle">Item</string>
+									<string key="NSTitle">None</string>
 									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
