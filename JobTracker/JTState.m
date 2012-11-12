@@ -75,6 +75,9 @@ static JTState *shared;
     NSArray *dataTables = [document nodesForXPath:@".//table[@class='datatable']" error:nil];
     NSArray *jobTypes = [NSArray arrayWithObjects:@"running", @"completed", @"failed", nil];
     [jobTypes enumerateObjectsUsingBlock:^(id jobType, NSUInteger idx, BOOL *stop) {
+        if (idx >= [dataTables count]) {
+            return;
+        }
         NSXMLElement *jobsTable = [dataTables objectAtIndex:idx];
         NSArray *jobRows = [jobsTable nodesForXPath:@"./tbody/tr" error:nil];
         NSMutableArray *jobList = [[NSMutableArray alloc] init];
