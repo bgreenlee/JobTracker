@@ -32,7 +32,6 @@
 		A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C5271648CB88005FC856 /* elephant_icon_white.png */; };
 		A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */; };
 		A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */; };
-		A2F8C5301649E815005FC856 /* jt_sample.html in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52F1649E815005FC856 /* jt_sample.html */; };
 		A2F8C5331649EFC2005FC856 /* JTState.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F8C5321649EFC2005FC856 /* JTState.m */; };
 /* End PBXBuildFile section */
 
@@ -98,7 +97,6 @@
 		A2F8C5271648CB88005FC856 /* elephant_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_white.png; sourceTree = "<group>"; };
 		A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_black.png; sourceTree = "<group>"; };
 		A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_white.png; sourceTree = "<group>"; };
-		A2F8C52F1649E815005FC856 /* jt_sample.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jt_sample.html; sourceTree = "<group>"; };
 		A2F8C5311649EFC2005FC856 /* JTState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTState.h; sourceTree = "<group>"; };
 		A2F8C5321649EFC2005FC856 /* JTState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,7 +214,6 @@
 				A2E2CF9D1634F40100CAF8F9 /* main.m */,
 				A2E2CF9F1634F40100CAF8F9 /* JobTracker-Prefix.pch */,
 				A2E2CFA01634F40100CAF8F9 /* Credits.rtf */,
-				A2F8C52F1649E815005FC856 /* jt_sample.html */,
 				A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */,
 			);
 			name = "Supporting Files";
@@ -332,7 +329,6 @@
 				A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */,
 				A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */,
 				A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */,
-				A2F8C5301649E815005FC856 /* jt_sample.html in Resources */,
 				A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */,
 				A2C757BC164FEE2A001B0618 /* README.md in Resources */,
 				A2C757C61650BA6C001B0618 /* JobTracker.icns in Resources */,
@@ -501,7 +497,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -519,7 +515,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
