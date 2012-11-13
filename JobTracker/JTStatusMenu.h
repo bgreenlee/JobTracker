@@ -16,7 +16,6 @@
 #define COMPLETED_JOBS_TAG 2
 #define FAILED_JOBS_TAG 3
 #define REFRESH_TAG 4
-#define REFRESH_INTERVAL 5
 
 @interface JTStatusMenu : NSObject <JTPreferencesDelegate, JTStateDelegate, GrowlApplicationBridgeDelegate> {
     IBOutlet NSMenu *statusMenu;
@@ -27,11 +26,11 @@
     JTState *jtState;
     JTPreferencesWindowController *prefs;
     NSTimer *refreshTimer;
-    NSInteger refreshInterval;
 }
 
 @property(nonatomic, copy) NSString *jobTrackerURL;
 @property(nonatomic, copy) NSString *usernames;
+@property(nonatomic) NSInteger refreshInterval;
 @property(nonatomic) BOOL startingJobNotificationsEnabled;
 @property(nonatomic) BOOL completedJobNotificationsEnabled;
 @property(nonatomic) BOOL failedJobNotificationsEnabled;
