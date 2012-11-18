@@ -190,7 +190,7 @@ failedJobNotificationsEnabled;
 }
 
 - (IBAction)openInBrowser:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobTrackerURL]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]]];
 }
 
 - (IBAction)showPreferences:(id)sender {
