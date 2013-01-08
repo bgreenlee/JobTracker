@@ -5,15 +5,15 @@ provides Growl/Notification Center notices of starting, completed, and failed jo
 
 ## Installation and Usage
 
-**You can download the binary [here](https://dl.dropbox.com/u/422683/JobTracker/JobTracker.app.zip).** Just
+**You can download the binary [here](http://cl.ly/1B0h2j1T0k2G/download/JobTracker.app.zip).** Just
 unzip it and drop it into your Applications folder. Running it will put a little elephant in your menu bar.
 Clicking that gets you this menu:
 
-![Main Menu](https://dl.dropbox.com/u/422683/JobTracker/jt-main-menu.png)
+![Main Menu](http://cl.ly/image/2J260C1L3B0Q/jt-main-menu.png)
 
 You'll first need to go to Preferences and enter your JobTracker URL:
 
-![Preferences](https://dl.dropbox.com/u/422683/JobTracker/jt-preferences.png)
+![Preferences](http://cl.ly/image/0h2c201q2t41/jt-preferences.png)
 
 By default it will track all jobs. You probably don't want this, so put your username and any other
 usernames you want to track in the "Usernames to track" field, comma-separated.
