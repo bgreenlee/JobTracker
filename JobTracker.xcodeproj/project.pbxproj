@@ -10,6 +10,7 @@
 		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
 		A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */; };
 		A29602031651DAC000388031 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A29602021651DAC000388031 /* README.md */; };
+		A2C434501721A20100C28636 /* jobtracker.html in Resources */ = {isa = PBXBuildFile; fileRef = A2C4344F1721A20100C28636 /* jobtracker.html */; };
 		A2C757AD164E303D001B0618 /* JTPageLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */; };
 		A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */; };
 		A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */; };
@@ -64,6 +65,7 @@
 		A20F5B7B164E0FE80016E81A /* JTJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJob.m; sourceTree = "<group>"; };
 		A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		A29602021651DAC000388031 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
+		A2C4344F1721A20100C28636 /* jobtracker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jobtracker.html; sourceTree = "<group>"; };
 		A2C757AB164E303D001B0618 /* JTPageLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPageLoadOperation.h; sourceTree = "<group>"; };
 		A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPageLoadOperation.m; sourceTree = "<group>"; };
 		A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		A2E2CFB51634F40100CAF8F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A2C4344F1721A20100C28636 /* jobtracker.html */,
 				A2E2CFB61634F40100CAF8F9 /* JobTrackerTests-Info.plist */,
 				A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */,
 			);
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */,
+				A2C434501721A20100C28636 /* jobtracker.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

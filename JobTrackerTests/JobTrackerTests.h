@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "JTState.h"
 
-@interface JobTrackerTests : SenTestCase
+@interface JobTrackerTests : SenTestCase {
+    JTState *jtState;
+}
 
 @end

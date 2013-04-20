@@ -1,0 +1,120 @@
+
+<!-- saved from url=(0056)http://jobtracker.example.com:50030/jobtracker.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>jobtracker Hadoop Map/Reduce Administration</title>
+<link rel="stylesheet" type="text/css" href="./jobtracker_files/hadoop.css">
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://jobtracker.example.com:50030/static/images/favicon.ico">
+<script type="text/javascript" src="./jobtracker_files/jobtracker.js"></script>
+<script type="text/javascript" src="./jobtracker_files/sorttable.js"></script>
+</head>
+<body>
+
+
+
+<h1>jobtracker Hadoop Map/Reduce Administration</h1>
+
+<div id="quicklinks">
+  <a href="http://jobtracker.example.com:50030/jobtracker.jsp#quicklinks" onclick="toggle(&#39;quicklinks-list&#39;); return false;">Quick Links</a>
+  <ul id="quicklinks-list">
+    <li><a href="http://jobtracker.example.com:50030/jobtracker.jsp#scheduling_info">Scheduling Info</a></li>
+    <li><a href="http://jobtracker.example.com:50030/jobtracker.jsp#running_jobs">Running Jobs</a></li>
+    <li><a href="http://jobtracker.example.com:50030/jobtracker.jsp#retired_jobs">Retired Jobs</a></li>
+    <li><a href="http://jobtracker.example.com:50030/jobtracker.jsp#local_logs">Local Logs</a></li>
+  </ul>
+</div>
+
+<b>State:</b> RUNNING<br>
+<b>Started:</b> Fri Mar 08 16:58:48 UTC 2013<br>
+<b>Version:</b> 0.20.2-cdh3u5,
+                30233064aaf5f2492bc687d61d72956876102109<br>
+<b>Compiled:</b> Fri Oct  5 18:45:42 PDT 2012 by 
+                 root from
+                 Unknown<br>
+<b>Identifier:</b> 201303081658<br>                 
+                   
+<hr>
+<h2>Cluster Summary (Heap Size is 12.39 GB/12.39 GB)</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tbody><tr><th>Running Map Tasks</th><th>Running Reduce Tasks</th><th>Total Submissions</th><th>Nodes</th><th>Occupied Map Slots</th><th>Occupied Reduce Slots</th><th>Reserved Map Slots</th><th>Reserved Reduce Slots</th><th>Map Task Capacity</th><th>Reduce Task Capacity</th><th>Avg. Tasks/Node</th><th>Blacklisted Nodes</th><th>Excluded Nodes</th></tr>
+<tr><td>1000</td><td>528</td><td>110129</td><td><a href="http://jobtracker.example.com:50030/machines.jsp?type=active">148</a></td><td>1000</td><td>528</td><td>0</td><td>0</td><td>3481</td><td>2310</td><td>39.13</td><td><a href="http://jobtracker.example.com:50030/machines.jsp?type=blacklisted">0</a></td><td><a href="http://jobtracker.example.com:50030/machines.jsp?type=excluded">0</a></td></tr></tbody></table>
+<br>
+<hr>
+<h2 id="scheduling_info">Scheduling Information</h2>
+<table border="2" cellpadding="5" cellspacing="2" class="sortable">
+<thead style="font-weight: bold">
+<tr>
+<td> Queue Name </td>
+<td> State </td>
+<td> Scheduling Information</td>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td><a href="http://jobtracker.example.com:50030/jobqueue_details.jsp?queueName=scheduled_jobs">scheduled_jobs</a></td>
+<td>running</td>
+<td>N/A
+</td>
+</tr>
+
+<tr>
+<td><a href="http://jobtracker.example.com:50030/jobqueue_details.jsp?queueName=default">default</a></td>
+<td>running</td>
+<td>N/A
+</td>
+</tr>
+
+<tr>
+<td><a href="http://jobtracker.example.com:50030/jobqueue_details.jsp?queueName=runner_jobs">runner_jobs</a></td>
+<td>running</td>
+<td>N/A
+</td>
+</tr>
+
+</tbody>
+<tfoot></tfoot></table>
+<hr>
+<b>Filter (Jobid, Priority, User, Name)</b> <input type="text" id="filter" onkeyup="applyfilter()"> <br>
+<span class="small">Example: 'user:smith 3200' will filter by 'smith' only in the user field and '3200' in all fields</span>
+<hr>
+
+<h2 id="running_jobs">Running Jobs</h2>
+<table class="datatable">
+<thead><tr><th><b>Jobid</b></th><th><b>Priority</b></th><th><b>User</b></th><th><b>Name</b></th><th><b>Map % Complete</b></th><th><b>Map Total</b></th><th><b>Maps Completed</b></th><th><b>Reduce % Complete</b></th><th><b>Reduce Total</b></th><th><b>Reduces Completed</b></th><th><b>Job Scheduling Information</b></th><td><b>Diagnostic Info </b></td></tr>
+</thead><tbody><tr><td id="job_0"><a href="http://jobtracker.example.com:50030/jobdetails.jsp?jobid=job_201303081658_110485&refresh=30">job_201303081658_110485</a></td><td id="priority_0">NORMAL</td><td id="user_0">alice</td><td id="name_0">[C297F973D20FD321ECF4D9D72FB1C175/F466234BCA54D2B94B8EBB844F5134B9] my awesome job/(14/27)</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>1200</td><td>1200</td><td>47.34%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="47%"></td><td cellspacing="0" class="perc_nonfilled" width="53%"></td></tr></tbody></table></td><td>100</td><td> 0</td><td>NA</td><td>NA</td></tr>
+<tr><td id="job_1"><a href="http://jobtracker.example.com:50030/jobdetails.jsp?jobid=job_201303081658_110515&refresh=30">job_201303081658_110515</a></td><td id="priority_1">NORMAL</td><td id="user_1">bob</td><td id="name_1">com.example.jobs.UserRecommendations/(39/40)</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>5225</td><td>5225</td><td>79.06%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="79%"></td><td cellspacing="0" class="perc_nonfilled" width="21%"></td></tr></tbody></table></td><td>100</td><td> 0</td><td>NA</td><td>NA</td></tr>
+</tbody></table>
+
+<hr>
+
+<h2 id="completed_jobs">Completed Jobs</h2><table class="datatable">
+<thead><tr><th><b>Jobid</b></th><th><b>Priority</b></th><th><b>User</b></th><th><b>Name</b></th><th><b>Map % Complete</b></th><th><b>Map Total</b></th><th><b>Maps Completed</b></th><th><b>Reduce % Complete</b></th><th><b>Reduce Total</b></th><th><b>Reduces Completed</b></th><th><b>Job Scheduling Information</b></th><td><b>Diagnostic Info </b></td></tr>
+</thead><tbody><tr><td id="job_7"><a href="http://jobtracker.example.com:50030/jobdetails.jsp?jobid=job_201303081658_110460&refresh=0">job_201303081658_110460</a></td><td id="priority_7">NORMAL</td><td id="user_7">bob</td><td id="name_7">[E35EB0BBB9017A1EBC28ECCFB0FA49EB/CF4EC38627D356DBB52DA1152E08FDD9] com.example.jobs.UserRecommendations/(35/40)</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>7682</td><td>7682</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>100</td><td> 100</td><td>NA</td><td>NA</td></tr>
+<tr><td id="job_8"><a href="http://jobtracker.example.com:50030/jobdetails.jsp?jobid=job_201303081658_110480&refresh=0">job_201303081658_110480</a></td><td id="priority_8">NORMAL</td><td id="user_8">eve</td><td id="name_8">eve:launcher:T=java:W=cj-listings_with_sharded_tags:A=merge_parts-listings_tags:ID=0001340-130403145743226-eve-eve-W</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>1</td><td>1</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>0</td><td> 0</td><td>NA</td><td>NA</td></tr>
+</tbody></table>
+<hr>
+
+<h2 id="failed_jobs">Failed Jobs</h2><table class="datatable">
+<thead><tr><th><b>Jobid</b></th><th><b>Priority</b></th><th><b>User</b></th><th><b>Name</b></th><th><b>Map % Complete</b></th><th><b>Map Total</b></th><th><b>Maps Completed</b></th><th><b>Reduce % Complete</b></th><th><b>Reduce Total</b></th><th><b>Reduces Completed</b></th><th><b>Job Scheduling Information</b></th><td><b>Diagnostic Info </b></td></tr>
+</thead><tbody><tr><td id="job_32"><a href="http://jobtracker.example.com:50030/jobdetails.jsp?jobid=job_201303081658_110508&refresh=0">job_201303081658_110508</a></td><td id="priority_32">NORMAL</td><td id="user_32">charlie</td><td id="name_32">[D35DC272E2A0412B6A15C62E3906DBC0/124382C582CC2C416EC361016645F912] listings/(1/1) ...gs/listing_ctr/2013_04_10</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>230</td><td>229</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>100</td><td> 0</td><td>NA</td><td>NA</td></tr>
+</tbody></table>
+<hr>
+
+<h2 id="retired_jobs">Retired Jobs</h2>
+<table border="1" cellpadding="5" cellspacing="0" class="sortable"><thead><tr><td><b>Jobid</b></td><td><b>Priority</b></td><td><b>User</b></td><td><b>Name</b></td><td><b>State</b></td><td><b>Start Time</b></td><td><b>Finish Time</b></td><td><b>Map % Complete</b></td><td><b>Reduce % Complete</b></td><td><b>Job Scheduling Information</b></td><td><b>Diagnostic Info </b></td></tr></thead>
+<tbody>
+<tr><td id="job_33"><a href="http://jobtracker.example.com:50030/jobdetailshistory.jsp?logFile=file%3A%2Fvar%2Flog%2Fhadoop%2Fhistory%2Fdone%2Fjobtracker.example.com_1362761928068_%2F2013%2F03%2F19%2F000110%2Fjob_201303081658_110522_1366386018827_dave_%255BECF4E970C066EBD066DC8CE831E0DD3E%252F30FB85D9E320A922">job_201303081658_110522</a></td><td id="priority_33">NORMAL</td><td id="user_33">dave</td><td id="name_33">[ECF4E970C066EBD066DC8CE831E0DD3E/30FB85D9E320A922BA1830FB3F17AEB4] com.example.jobs.Growth/(1/22) .../30/2012_02_01-2012_03_01</td><td>SUCCEEDED</td><td>Fri Apr 19 15:40:18 UTC 2013</td><td>Fri Apr 19 15:40:34 UTC 2013</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>NA</td><td>NA</td></tr>
+<tr><td id="job_34"><a href="http://jobtracker.example.com:50030/jobdetailshistory.jsp?logFile=file%3A%2Fvar%2Flog%2Fhadoop%2Fhistory%2Fdone%2Fjobtracker.example.com_1362761928068_%2F2013%2F03%2F19%2F000110%2Fjob_201303081658_110521_1366385868044_dave_%255BF813E4E7C262E0AC7A6972187CBA9FF4%252F6501425050ECEE4D">job_201303081658_110521</a></td><td id="priority_34">NORMAL</td><td id="user_34">dave</td><td id="name_34">[F813E4E7C262E0AC7A6972187CBA9FF4/6501425050ECEE4D3BB5CBA66D2023EA] merge_event_parts_test/(4/15) ...t/broken_dates/2013_04_17</td><td>SUCCEEDED</td><td>Fri Apr 19 15:37:48 UTC 2013</td><td>Fri Apr 19 15:38:29 UTC 2013</td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>100.00%<table border="1px" width="80px"><tbody><tr><td cellspacing="0" class="perc_filled" width="100%"></td></tr></tbody></table></td><td>NA</td><td>NA</td></tr>
+</tbody><tfoot></tfoot></table>
+
+<hr>
+
+<h2 id="local_logs">Local Logs</h2>
+<a href="http://jobtracker.example.com:50030/logs/">Log</a> directory, <a href="http://jobtracker.example.com:50030/jobhistory.jsp">
+Job Tracker History</a>
+
+<hr>
+<a href="http://www.cloudera.com/hadoop/">Cloudera's Distribution including Apache Hadoop</a>, 2013.
+
+
+</body></html>

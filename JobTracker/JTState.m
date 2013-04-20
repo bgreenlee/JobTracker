@@ -56,7 +56,7 @@ static JTState *shared;
     NSXMLElement *clusterSummaryTable;
     if ([nodes count] > 0) {
         clusterSummaryTable = [nodes objectAtIndex:0];
-        nodes = [clusterSummaryTable nodesForXPath:@"./tr[2]//td" error:nil];
+        nodes = [clusterSummaryTable nodesForXPath:@".//tr[2]//td" error:nil];
         if ([nodes count] > 0) {
             NSArray *attribs = [NSArray arrayWithObjects:@"running_map_tasks", @"running_reduce_tasks", @"total_submissions",
                                 @"nodes", @"occupied_map_slots", @"occupied_reduce_slots", @"reserved_map_slots",
@@ -68,9 +68,7 @@ static JTState *shared;
             }];
         }
     }
-    
-    //NSLog(@"cluster summary: %@", clusterSummary);
-    
+        
     // Jobs tables
     NSArray *dataTables = [document nodesForXPath:@".//table[@class='datatable']" error:nil];
     NSArray *jobTypes = [NSArray arrayWithObjects:@"running", @"completed", @"failed", nil];
@@ -121,6 +119,5 @@ static JTState *shared;
     lastRunningJobs = [jobs objectForKey:@"running"];
     refreshRunning = NO;
     [self.delegate stateUpdated];
-    //    NSLog(@"jobs: %@", jobs);
 }
 @end
