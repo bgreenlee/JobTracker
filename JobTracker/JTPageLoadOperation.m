@@ -14,8 +14,9 @@
 @synthesize targetURL;
 
 - (id)initWithURL:(NSURL *)url {
-    if (![super init]) return nil;
-    [self setTargetURL:url];
+    if ((self = [super init])) {
+        [self setTargetURL:url];
+    }
     return self;
 }
 
