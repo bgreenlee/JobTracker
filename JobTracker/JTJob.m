@@ -37,8 +37,16 @@ reducePctComplete, reduceTotal, reducesComplete, jobSchedulingInfo, diagnosticIn
 }
 
 - (NSString *)displayName {
-    NSArray *parts = [self.name componentsSeparatedByString:@" "];
-    return [NSString stringWithFormat:@"%@ (%@)", [parts objectAtIndex:[parts count]-1], self.user];
+    // strip anything at the start of the string in brackets
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^(\\[.*?\\])?\\s*"
+                                                                           options:0
+                                                                             error:nil];
+    NSString *dispName = [regex stringByReplacingMatchesInString:self.name
+                                                         options:0
+                                                           range:NSMakeRange(0, [self.name length])
+                                                    withTemplate:@""];
+    
+    return [NSString stringWithFormat:@"%@ (%@)", dispName, self.user];
 }
 
 - (NSString *)mapPctComplete {

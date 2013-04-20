@@ -11,6 +11,7 @@
 		A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */; };
 		A29602031651DAC000388031 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A29602021651DAC000388031 /* README.md */; };
 		A2C434501721A20100C28636 /* jobtracker.html in Resources */ = {isa = PBXBuildFile; fileRef = A2C4344F1721A20100C28636 /* jobtracker.html */; };
+		A2C4345317226F0700C28636 /* JTJobTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C4345217226F0700C28636 /* JTJobTests.m */; };
 		A2C757AD164E303D001B0618 /* JTPageLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */; };
 		A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */; };
 		A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */; };
@@ -26,7 +27,7 @@
 		A2E2CFB01634F40100CAF8F9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */; };
 		A2E2CFB11634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
 		A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */; };
-		A2E2CFBC1634F40100CAF8F9 /* JobTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */; };
+		A2E2CFBC1634F40100CAF8F9 /* JTStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */; };
 		A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */; };
 		A2F8AF201655BABA00D877B3 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
 		A2F8AF221655BAFC00D877B3 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
@@ -66,6 +67,8 @@
 		A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		A29602021651DAC000388031 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		A2C4344F1721A20100C28636 /* jobtracker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jobtracker.html; sourceTree = "<group>"; };
+		A2C4345117226F0700C28636 /* JTJobTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTJobTests.h; sourceTree = "<group>"; };
+		A2C4345217226F0700C28636 /* JTJobTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJobTests.m; sourceTree = "<group>"; };
 		A2C757AB164E303D001B0618 /* JTPageLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTPageLoadOperation.h; sourceTree = "<group>"; };
 		A2C757AC164E303D001B0618 /* JTPageLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTPageLoadOperation.m; sourceTree = "<group>"; };
 		A2C757B1164E90DC001B0618 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
@@ -92,8 +95,8 @@
 		A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		A2E2CFB61634F40100CAF8F9 /* JobTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JobTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		A2E2CFB81634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		A2E2CFBA1634F40100CAF8F9 /* JobTrackerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JobTrackerTests.h; sourceTree = "<group>"; };
-		A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobTrackerTests.m; sourceTree = "<group>"; };
+		A2E2CFBA1634F40100CAF8F9 /* JTStateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTStateTests.h; sourceTree = "<group>"; };
+		A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTStateTests.m; sourceTree = "<group>"; };
 		A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTStatusMenu.h; sourceTree = "<group>"; };
 		A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTStatusMenu.m; sourceTree = "<group>"; };
 		A2F8AF1F1655BABA00D877B3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
@@ -227,8 +230,10 @@
 		A2E2CFB41634F40100CAF8F9 /* JobTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				A2E2CFBA1634F40100CAF8F9 /* JobTrackerTests.h */,
-				A2E2CFBB1634F40100CAF8F9 /* JobTrackerTests.m */,
+				A2E2CFBA1634F40100CAF8F9 /* JTStateTests.h */,
+				A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */,
+				A2C4345117226F0700C28636 /* JTJobTests.h */,
+				A2C4345217226F0700C28636 /* JTJobTests.m */,
 				A2E2CFB51634F40100CAF8F9 /* Supporting Files */,
 			);
 			path = JobTrackerTests;
@@ -404,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E2CFBC1634F40100CAF8F9 /* JobTrackerTests.m in Sources */,
+				A2E2CFBC1634F40100CAF8F9 /* JTStateTests.m in Sources */,
+				A2C4345317226F0700C28636 /* JTJobTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

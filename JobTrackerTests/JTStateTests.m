@@ -1,14 +1,14 @@
 //
-//  JobTrackerTests.m
-//  JobTrackerTests
+//  JTStateTests.m
+//  JTStateTests
 //
 //  Created by Brad Greenlee on 10/21/12.
 //  Copyright (c) 2012 Hack Arts. All rights reserved.
 //
 
-#import "JobTrackerTests.h"
+#import "JTStateTests.h"
 
-@implementation JobTrackerTests
+@implementation JTStateTests
 
 - (void)setUp {
     [super setUp];
