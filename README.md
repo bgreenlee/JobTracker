@@ -30,3 +30,8 @@ information), I can try to get it working.
 Much thanks goes to [Marc Hedlund](https://github.com/precipice), whose
 [Dragon's Breath](https://github.com/precipice/Dragon-s-Breath) menu bar app (also in the
 [App Store](https://itunes.apple.com/us/app/dragons-breath/id453746086?mt=12)) served as my starting point.
+
+## Contact
+
+Brad Greenlee <brad@etsy.com>
+[@bgreenlee](https://twitter.com/bgreenlee)

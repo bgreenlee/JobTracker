@@ -3,7 +3,7 @@
 //  JobTracker
 //
 //  Created by Brad Greenlee on 11/11/12.
-//  Copyright (c) 2012 Hack Arts. All rights reserved.
+//  Copyright (c) 2012 Etsy. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
