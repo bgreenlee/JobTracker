@@ -33,5 +33,4 @@ Much thanks goes to [Marc Hedlund](https://github.com/precipice), whose
 
 ## Contact
 
-Brad Greenlee <brad@etsy.com>
-[@bgreenlee](https://twitter.com/bgreenlee)
+<brad@etsy.com> / [@bgreenlee](https://twitter.com/bgreenlee)
