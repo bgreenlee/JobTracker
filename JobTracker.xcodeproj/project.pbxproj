@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
+		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
+		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
 		A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */; };
 		A29602031651DAC000388031 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A29602021651DAC000388031 /* README.md */; };
 		A2C434501721A20100C28636 /* jobtracker.html in Resources */ = {isa = PBXBuildFile; fileRef = A2C4344F1721A20100C28636 /* jobtracker.html */; };
@@ -17,7 +19,6 @@
 		A2C757B5164FEB43001B0618 /* JTPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B4164FEB43001B0618 /* JTPreferencesWindowController.m */; };
 		A2C757BB164FEE2A001B0618 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C757B9164FEE2A001B0618 /* LaunchAtLoginController.m */; };
 		A2C757BC164FEE2A001B0618 /* LaunchAtLoginController README.md in Resources */ = {isa = PBXBuildFile; fileRef = A2C757BA164FEE2A001B0618 /* LaunchAtLoginController README.md */; };
-		A2C757C61650BA6C001B0618 /* JobTracker.icns in Resources */ = {isa = PBXBuildFile; fileRef = A2C757C51650BA6C001B0618 /* JobTracker.icns */; };
 		A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
 		A2E2CF9C1634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */; };
 		A2E2CF9E1634F40100CAF8F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CF9D1634F40100CAF8F9 /* main.m */; };
@@ -31,10 +32,6 @@
 		A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */; };
 		A2F8AF201655BABA00D877B3 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
 		A2F8AF221655BAFC00D877B3 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
-		A2F8C5281648CB88005FC856 /* elephant_icon_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C5261648CB88005FC856 /* elephant_icon_black.png */; };
-		A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C5271648CB88005FC856 /* elephant_icon_white.png */; };
-		A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */; };
-		A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */; };
 		A2F8C5331649EFC2005FC856 /* JTState.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F8C5321649EFC2005FC856 /* JTState.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +61,8 @@
 /* Begin PBXFileReference section */
 		A20F5B7A164E0FE80016E81A /* JTJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTJob.h; sourceTree = "<group>"; };
 		A20F5B7B164E0FE80016E81A /* JTJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTJob.m; sourceTree = "<group>"; };
+		A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "Pith Helmet.iconset"; sourceTree = "<group>"; };
+		A290CAE2172B1810004E08F8 /* pith helmet small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet small.png"; sourceTree = "<group>"; };
 		A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		A29602021651DAC000388031 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 		A2C4344F1721A20100C28636 /* jobtracker.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jobtracker.html; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		A2C757B8164FEE2A001B0618 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		A2C757B9164FEE2A001B0618 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
 		A2C757BA164FEE2A001B0618 /* LaunchAtLoginController README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "LaunchAtLoginController README.md"; sourceTree = "<group>"; };
-		A2C757C51650BA6C001B0618 /* JobTracker.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = JobTracker.icns; sourceTree = SOURCE_ROOT; };
 		A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E2CF911634F40100CAF8F9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A2E2CF941634F40100CAF8F9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -100,10 +98,6 @@
 		A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTStatusMenu.h; sourceTree = "<group>"; };
 		A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTStatusMenu.m; sourceTree = "<group>"; };
 		A2F8AF1F1655BABA00D877B3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
-		A2F8C5261648CB88005FC856 /* elephant_icon_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_black.png; sourceTree = "<group>"; };
-		A2F8C5271648CB88005FC856 /* elephant_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_white.png; sourceTree = "<group>"; };
-		A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_black.png; sourceTree = "<group>"; };
-		A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = elephant_icon_big_white.png; sourceTree = "<group>"; };
 		A2F8C5311649EFC2005FC856 /* JTState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTState.h; sourceTree = "<group>"; };
 		A2F8C5321649EFC2005FC856 /* JTState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -216,7 +210,6 @@
 			isa = PBXGroup;
 			children = (
 				A29602021651DAC000388031 /* README.md */,
-				A2C757C51650BA6C001B0618 /* JobTracker.icns */,
 				A2E2CF991634F40100CAF8F9 /* JobTracker-Info.plist */,
 				A2E2CF9A1634F40100CAF8F9 /* InfoPlist.strings */,
 				A2E2CF9D1634F40100CAF8F9 /* main.m */,
@@ -252,10 +245,8 @@
 		A2F8C52A1648CB8D005FC856 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				A2F8C52B1648CE74005FC856 /* elephant_icon_big_black.png */,
-				A2F8C52C1648CE74005FC856 /* elephant_icon_big_white.png */,
-				A2F8C5261648CB88005FC856 /* elephant_icon_black.png */,
-				A2F8C5271648CB88005FC856 /* elephant_icon_white.png */,
+				A290CAE2172B1810004E08F8 /* pith helmet small.png */,
+				A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -337,15 +328,12 @@
 				A2E2CF9C1634F40100CAF8F9 /* InfoPlist.strings in Resources */,
 				A2E2CFA21634F40100CAF8F9 /* Credits.rtf in Resources */,
 				A2E2CFA81634F40100CAF8F9 /* MainMenu.xib in Resources */,
-				A2F8C5281648CB88005FC856 /* elephant_icon_black.png in Resources */,
-				A2F8C5291648CB88005FC856 /* elephant_icon_white.png in Resources */,
-				A2F8C52D1648CE74005FC856 /* elephant_icon_big_black.png in Resources */,
-				A2F8C52E1648CE74005FC856 /* elephant_icon_big_white.png in Resources */,
 				A2C757B2164E90DC001B0618 /* PreferencesWindow.xib in Resources */,
 				A2C757BC164FEE2A001B0618 /* LaunchAtLoginController README.md in Resources */,
-				A2C757C61650BA6C001B0618 /* JobTracker.icns in Resources */,
 				A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */,
 				A29602031651DAC000388031 /* README.md in Resources */,
+				A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */,
+				A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

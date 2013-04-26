@@ -16,8 +16,7 @@ failedJobNotificationsEnabled;
 
 - (void)awakeFromNib {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    statusImage = [NSImage imageNamed:@"elephant_icon_big_black.png"];
-    statusHighlightImage = [NSImage imageNamed:@"elephant_icon_big_white.png"];
+    statusImage = [NSImage imageNamed:@"pith helmet small.png"];
     [statusItem setImage:statusImage];
     [statusItem setAlternateImage:statusHighlightImage];
     [statusItem setHighlightMode:YES];
