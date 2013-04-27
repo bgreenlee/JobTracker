@@ -10,6 +10,9 @@
 #import "JTState.h"
 #import "JTJob.h"
 #import "JTPreferencesWindowController.h"
+#import "JTGeneralPreferencesViewController.h"
+#import "JTAboutViewController.h"
+#import "MASPreferencesWindowController.h"
 #import "Growl/GrowlApplicationBridge.h"
 
 #define RUNNING_JOBS_TAG 1
@@ -24,10 +27,11 @@
     NSImage *statusHighlightImage;
     NSImage *statusDisabledHighlightImage;
     JTState *jtState;
-    JTPreferencesWindowController *prefs;
     NSTimer *refreshTimer;
+    JTPreferencesWindowController *_preferencesWindowController;
 }
 
+@property (nonatomic, readonly) JTPreferencesWindowController *preferencesWindowController;
 @property(nonatomic, copy) NSString *jobTrackerURL;
 @property(nonatomic, copy) NSString *usernames;
 @property(nonatomic) NSInteger refreshInterval;

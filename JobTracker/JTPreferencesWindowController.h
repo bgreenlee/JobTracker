@@ -7,21 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MASPreferencesWindowController.h"
+#import "JTGeneralPreferencesViewController.h"
+#import "JTAboutViewController.h"
 
 #define DEFAULT_REFRESH_INTERVAL 5
 
-@interface JTPreferencesWindowController : NSWindowController
+@interface JTPreferencesWindowController : MASPreferencesWindowController {
+    JTGeneralPreferencesViewController *generalViewController;
+    JTAboutViewController *aboutViewController;
+}
 
-@property(nonatomic, retain) IBOutlet NSTextFieldCell *jobTrackerURLCell;
-@property(nonatomic, retain) IBOutlet NSTextFieldCell *usernamesCell;
-@property(nonatomic, retain) IBOutlet NSTextFieldCell *refreshIntervalCell;
-@property(nonatomic, retain) IBOutlet NSButton *startingJobNotificationPreference;
-@property(nonatomic, retain) IBOutlet NSButton *completedJobNotificationPreference;
-@property(nonatomic, retain) IBOutlet NSButton *failedJobNotificationPreference;
-@property(nonatomic, retain) IBOutlet NSButton *launchAtLoginPreference;
-@property(nonatomic, retain) IBOutlet NSButton *okayButton;
-@property(nonatomic, retain) IBOutlet NSButton *cancelButton;
 @property(nonatomic, retain) id delegate;
+
+- (id)init;
+- (void)loadSettings;
+- (void)saveSettings;
 
 @end
 
