@@ -31,5 +31,10 @@
     return NSLocalizedString(@"About", @"Toolbar item name for the About pane");
 }
 
+- (void)awakeFromNib {
+    NSString *_version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    [version setStringValue:_version];
+}
+
 @end
 

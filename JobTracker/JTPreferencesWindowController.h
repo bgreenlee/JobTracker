@@ -20,10 +20,6 @@
 
 @property(nonatomic, retain) id delegate;
 
-- (id)init;
-- (void)loadSettings;
-- (void)saveSettings;
-
 @end
 
 @protocol JTPreferencesDelegate

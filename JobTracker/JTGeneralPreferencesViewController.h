@@ -7,6 +7,7 @@
 //
 
 #import "MASPreferencesViewController.h"
+#import "LaunchAtLoginController.h"
 
 #define DEFAULT_REFRESH_INTERVAL 5
 
@@ -19,5 +20,7 @@
 @property(nonatomic, retain) IBOutlet NSButton *completedJobNotificationPreference;
 @property(nonatomic, retain) IBOutlet NSButton *failedJobNotificationPreference;
 @property(nonatomic, retain) IBOutlet NSButton *launchAtLoginPreference;
+
+- (void)saveSettings;
 
 @end
