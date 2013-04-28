@@ -18,11 +18,15 @@
 @synthesize delegate;
 
 - (id)init {
-    generalViewController = [[JTGeneralPreferencesViewController alloc] init];
-    aboutViewController = [[JTAboutViewController alloc] init];
-    NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, aboutViewController, nil];
+    JTGeneralPreferencesViewController *_generalViewController = [[JTGeneralPreferencesViewController alloc] init];
+    JTAboutViewController *_aboutViewController = [[JTAboutViewController alloc] init];
+    NSArray *controllers = [[NSArray alloc] initWithObjects:_generalViewController, _aboutViewController, nil];
     NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
-    return [super initWithViewControllers:controllers title:title];
+    if ((self = [super initWithViewControllers:controllers title:title])) {
+        generalViewController = _generalViewController;
+        aboutViewController = _aboutViewController;
+    }
+    return self;
 }
 
 - (void)showWindow:(id)sender {
