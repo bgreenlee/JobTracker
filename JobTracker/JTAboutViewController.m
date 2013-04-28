@@ -10,7 +10,7 @@
 
 @implementation JTAboutViewController
 
-@synthesize version;
+@synthesize version, homepageLink, etsyLink;
 
 - (id)init {
     return [super initWithNibName:@"AboutView" bundle:nil];
@@ -24,7 +24,7 @@
 }
 
 - (NSImage *)toolbarItemImage {
-    return [NSImage imageNamed:NSImageNameInfo];
+    return [NSImage imageNamed:@"Pith Helmet"];
 }
 
 - (NSString *)toolbarItemLabel {
@@ -32,8 +32,18 @@
 }
 
 - (void)awakeFromNib {
+    // set version
     NSString *_version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
     [version setStringValue:_version];
+    
+    // linkify text
+    [homepageLink setAttributedStringValue:
+        [NSAttributedString hyperlinkFromString:@"https://github.com/bgreenlee/JobTracker"
+                                        withURL:[NSURL URLWithString:@"https://github.com/bgreenlee/JobTracker"]]];
+
+    [etsyLink setAttributedStringValue:
+        [NSAttributedString hyperlinkFromString:@"Etsy, Inc."
+                                        withURL:[NSURL URLWithString:@"https://www.etsy.com"]]];
 }
 
 @end

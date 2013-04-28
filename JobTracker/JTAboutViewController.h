@@ -7,9 +7,12 @@
 //
 
 #import "MASPreferencesViewController.h"
+#import "NSAttributedString+Hyperlink.h"
 
 @interface JTAboutViewController : NSViewController <MASPreferencesViewController>
 
-@property(nonatomic, retain) IBOutlet NSTextField *version;
+@property(nonatomic) IBOutlet NSTextField *version;
+@property(nonatomic) IBOutlet HyperlinkTextField *etsyLink;
+@property(nonatomic) IBOutlet HyperlinkTextField *homepageLink;
 
 @end
