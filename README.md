@@ -13,7 +13,7 @@ Clicking that gets you this menu:
 
 You'll first need to go to Preferences and enter your JobTracker URL:
 
-![Preferences](http://cl.ly/image/0h2c201q2t41/jt-preferences.png)
+![Preferences](http://cl.ly/image/0l3d3i2j2G1y/jt-preferences.png)
 
 By default it will track all jobs. You probably don't want this, so put your username and any other
 usernames you want to track in the "Usernames to track" field, comma-separated.
