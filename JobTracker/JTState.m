@@ -49,7 +49,6 @@ static JTState *shared;
 }
 
 - (void)errorLoadingPage:(NSError *)error {
-    NSLog(@"error loading page: %@", error);
     currentError = error;
     refreshRunning = NO;
 }

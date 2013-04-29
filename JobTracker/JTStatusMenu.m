@@ -130,16 +130,18 @@ failedJobNotificationsEnabled;
 
 - (void)setError:(NSError *)error {
     NSMenuItem *refresh = [statusMenu itemWithTag:REFRESH_TAG];
-    NSMutableAttributedString *errorString = [[NSMutableAttributedString alloc] initWithString:@"Error: Please check your JobTracker URL"];
-    [errorString addAttribute:NSForegroundColorAttributeName value:[NSColor redColor] range:NSMakeRange(0, [errorString length])];
+    NSDictionary *attrDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [NSFont boldSystemFontOfSize:13.0], NSFontAttributeName,
+                                [NSColor redColor], NSForegroundColorAttributeName, nil];
+    NSAttributedString *errorString = [[NSAttributedString alloc] initWithString:@"Error: Please check your JobTracker URL" attributes:attrDict];
     [refresh setAttributedTitle:errorString];
+    [refresh setEnabled:NO];
     
     [statusItem setImage:[NSImage imageNamed:@"pith helmet error.png"]];
-
-    [refresh setEnabled:NO];
 }
 
 -(void)clearError {
+    [[statusMenu itemWithTag:REFRESH_TAG] setAttributedTitle:nil];
     [statusItem setImage:[NSImage imageNamed:@"pith helmet small.png"]];
 }
 
@@ -185,14 +187,12 @@ failedJobNotificationsEnabled;
 
 - (void)startRefresh {
     NSMenuItem *refresh = [statusMenu itemWithTag:REFRESH_TAG];
-    [refresh setAttributedTitle:nil];
     [refresh setTitle:@"Refreshing..."];
     [refresh setEnabled:NO];
 }
 
 - (void)endRefresh {
     NSMenuItem *refresh = [statusMenu itemWithTag:REFRESH_TAG];
-    [refresh setAttributedTitle:nil];
     [refresh setTitle:@"Refresh"];
     [refresh setEnabled:YES];
 }
