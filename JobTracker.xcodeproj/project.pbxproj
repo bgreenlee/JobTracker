@@ -10,6 +10,7 @@
 		A20F5B7C164E0FE80016E81A /* JTJob.m in Sources */ = {isa = PBXBuildFile; fileRef = A20F5B7B164E0FE80016E81A /* JTJob.m */; };
 		A25363DD172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DC172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m */; };
 		A25363E0172D791500D2ECF1 /* HyperlinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */; };
+		A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */ = {isa = PBXBuildFile; fileRef = A28D04B8172E3B8000DEBCBE /* pith helmet error.png */; };
 		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
 		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
 		A29601FF165170CF00388031 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */; };
@@ -72,6 +73,7 @@
 		A25363DC172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+Hyperlink.m"; path = "NSAttributedString+Hyperlink/NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		A25363DE172D791500D2ECF1 /* HyperlinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperlinkTextField.h; sourceTree = "<group>"; };
 		A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperlinkTextField.m; sourceTree = "<group>"; };
+		A28D04B8172E3B8000DEBCBE /* pith helmet error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet error.png"; sourceTree = "<group>"; };
 		A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "Pith Helmet.iconset"; sourceTree = "<group>"; };
 		A290CAE2172B1810004E08F8 /* pith helmet small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet small.png"; sourceTree = "<group>"; };
 		A29601FE165170CF00388031 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		A2F8C52A1648CB8D005FC856 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				A28D04B8172E3B8000DEBCBE /* pith helmet error.png */,
 				A290CAE2172B1810004E08F8 /* pith helmet small.png */,
 				A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */,
 			);
@@ -387,6 +390,7 @@
 				A2C434571723C07F00C28636 /* GeneralPreferencesView.xib in Resources */,
 				A2C434591723C12000C28636 /* AboutView.xib in Resources */,
 				A2C434621723C5B900C28636 /* MASPreferencesWindow.xib in Resources */,
+				A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

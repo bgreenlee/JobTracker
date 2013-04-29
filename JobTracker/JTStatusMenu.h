@@ -40,6 +40,7 @@
 @property(nonatomic) BOOL failedJobNotificationsEnabled;
 
 - (IBAction)refresh:(id)sender;
+- (void)setError:(NSError *)error;
 - (IBAction)openInBrowser:(id)sender;
 - (void)updateMenuItemWithTag:(NSInteger)tag withJobs:(NSArray *)jobs;
 - (void)jobSelected:(id)sender;

@@ -25,14 +25,19 @@
     NSXMLDocument *document = [[NSXMLDocument alloc] initWithContentsOfURL:targetURL
                                                                    options:NSXMLDocumentTidyHTML
                                                                      error:&error];
+    JTState *jtState = [JTState sharedInstance];
     
-    if (!document) {
-        NSLog(@"Error loading document: %@", error);
+    if (document) {
+        [jtState performSelectorOnMainThread:@selector(pageLoaded:)
+                                    withObject:document
+                               waitUntilDone:YES];
+
+    } else {
+        [jtState performSelectorOnMainThread:@selector(errorLoadingPage:)
+                                  withObject:error
+                               waitUntilDone:NO];
     }
     
-    [[JTState sharedInstance] performSelectorOnMainThread:@selector(pageLoaded:)
-                                               withObject:document
-                                            waitUntilDone:YES];
 }
 
 @end

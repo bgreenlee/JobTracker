@@ -12,7 +12,7 @@
 @implementation JTState
 static JTState *shared;
 
-@synthesize clusterSummary, jobs, url, usernames, delegate;
+@synthesize clusterSummary, jobs, url, usernames, delegate, currentError;
 
 + (id)sharedInstance {
     return shared;
@@ -44,7 +44,14 @@ static JTState *shared;
 }
 
 - (void)pageLoaded:(NSXMLDocument *)document {
+    currentError = nil;
     [self parse:document];
+}
+
+- (void)errorLoadingPage:(NSError *)error {
+    NSLog(@"error loading page: %@", error);
+    currentError = error;
+    refreshRunning = NO;
 }
 
 - (void)refresh {
@@ -55,6 +62,7 @@ static JTState *shared;
     }
 }
 
+// TODO: set an error if we can't parse the page
 - (void)parse:(NSXMLDocument *)document {
     // Cluster Summary
     NSArray *nodes = [document nodesForXPath:@".//table[1]" error:nil];
