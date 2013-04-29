@@ -34,8 +34,9 @@ failedJobNotificationsEnabled;
     
     [self loadPreferences];
     if ([self isConfigured]) {
-        jtState = [[JTState alloc] initWithURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]]
-                                 withUsernames:usernames];
+        jtState = [JTState sharedInstance];
+        jtState.url = [NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]];
+        [jtState setUsernameString:usernames];
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];
@@ -212,8 +213,9 @@ failedJobNotificationsEnabled;
 - (void)preferencesUpdated {
     [self loadPreferences];
     if ([self isConfigured]) {
-        jtState = [[JTState alloc] initWithURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]]
-                                 withUsernames:usernames];
+        jtState = [JTState sharedInstance];
+        jtState.url = [NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]];
+        [jtState setUsernameString:usernames];
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];

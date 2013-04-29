@@ -1,5 +1,5 @@
 //
-//  JTParser.h
+//  JTState.h
 //  JobTracker
 //
 //  Created by Brad Greenlee on 11/6/12.
@@ -21,7 +21,8 @@
 @property(nonatomic, retain) NSArray *usernames;
 @property(nonatomic, retain) id delegate;
 
-- (id)initWithURL:(NSURL *)url withUsernames:(NSString *)usernames;
++ (id)sharedInstance;
+- (void)setUsernameString:(NSString *)usernames;
 - (void)pageLoaded:(NSXMLDocument *)document;
 - (void)refresh;
 - (void)parse:(NSXMLDocument *)document;

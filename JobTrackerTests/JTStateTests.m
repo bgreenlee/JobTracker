@@ -18,7 +18,8 @@
     NSXMLDocument *document = [[NSXMLDocument alloc] initWithContentsOfURL:fileUrl
                                                                    options:NSXMLDocumentTidyHTML
                                                                      error:nil];
-    jtState = [[JTState alloc] initWithURL:fileUrl withUsernames:nil];
+    jtState = [JTState sharedInstance];
+    jtState.url = fileUrl;
     [jtState pageLoaded:document];
 }
 

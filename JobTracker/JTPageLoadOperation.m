@@ -30,9 +30,9 @@
         NSLog(@"Error loading document: %@", error);
     }
     
-    [[[JTState alloc] init] performSelectorOnMainThread:@selector(pageLoaded:)
-                                       withObject:document
-                                    waitUntilDone:YES];
+    [[JTState sharedInstance] performSelectorOnMainThread:@selector(pageLoaded:)
+                                               withObject:document
+                                            waitUntilDone:YES];
 }
 
 @end

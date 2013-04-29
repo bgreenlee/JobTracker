@@ -1,5 +1,5 @@
 //
-//  JTParser.m
+//  JTState.m
 //  JobTracker
 //
 //  Created by Brad Greenlee on 11/6/12.
@@ -14,28 +14,33 @@ static JTState *shared;
 
 @synthesize clusterSummary, jobs, url, usernames, delegate;
 
-- (id)init {
-    if (shared) {
-        return shared;
++ (id)sharedInstance {
+    return shared;
+}
+
++ (void)initialize {
+    static BOOL initialized = NO;
+    if (!initialized) {
+        initialized = YES;
+        shared = [[JTState alloc] init];
     }
+}
+
+- (id)init {
     if ((self = [super init])) {
         clusterSummary = [[NSMutableDictionary alloc] init];
         jobs = [[NSMutableDictionary alloc] init];
         queue = [[NSOperationQueue alloc] init];
     }
-    shared = self;
     return self;
 }
 
-- (id)initWithURL:(NSURL *)_url withUsernames:(NSString *)_usernames{
-    self = [self init];
-    url = _url;
+- (void)setUsernameString:(NSString *)_usernames{
     if (_usernames == nil || [_usernames isEqualToString:@""]) {
         usernames = nil;
     } else {
         usernames = [_usernames componentsSeparatedByString:@","];
     }
-    return self;
 }
 
 - (void)pageLoaded:(NSXMLDocument *)document {
