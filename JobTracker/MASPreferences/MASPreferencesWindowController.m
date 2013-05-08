@@ -82,16 +82,19 @@ static NSString *const PreferencesKeyForViewBounds (NSString *identifier)
 
 - (BOOL)windowShouldClose:(id)sender
 {
+    #pragma unused (sender)
     return !self.selectedViewController || [self.selectedViewController commitEditing];
 }
 
 - (void)windowDidMove:(NSNotification*)aNotification
 {
+    #pragma unused (aNotification)
     [[NSUserDefaults standardUserDefaults] setObject:NSStringFromPoint(NSMakePoint(NSMinX([self.window frame]), NSMaxY([self.window frame]))) forKey:kMASPreferencesFrameTopLeftKey];
 }
 
 - (void)windowDidResize:(NSNotification*)aNotification
 {
+    #pragma unused (aNotification)
     NSViewController <MASPreferencesViewController> *viewController = self.selectedViewController;
     if (viewController)
         [[NSUserDefaults standardUserDefaults] setObject:NSStringFromRect([viewController.view bounds]) forKey:PreferencesKeyForViewBounds(viewController.identifier)];
@@ -124,24 +127,28 @@ static NSString *const PreferencesKeyForViewBounds (NSString *identifier)
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar *)toolbar
 {
+    #pragma unused (toolbar)
     NSArray *identifiers = self.toolbarItemIdentifiers;
     return identifiers;
 }                   
                    
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar
 {
+    #pragma unused (toolbar)
     NSArray *identifiers = self.toolbarItemIdentifiers;
     return identifiers;
 }
 
 - (NSArray *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar
 {
+    #pragma unused (toolbar)
     NSArray *identifiers = self.toolbarItemIdentifiers;
     return identifiers;
 }
 
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag
 {
+    #pragma unused (toolbar, flag)
     NSToolbarItem *toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
     NSArray *identifiers = self.toolbarItemIdentifiers;
     NSUInteger controllerIndex = [identifiers indexOfObject:itemIdentifier];
@@ -297,6 +304,7 @@ static NSString *const PreferencesKeyForViewBounds (NSString *identifier)
 
 - (IBAction)goNextTab:(id)sender
 {
+    #pragma unused (sender)
     NSUInteger selectedIndex = self.indexOfSelectedController;
     NSUInteger numberOfControllers = [_viewControllers count];
 
@@ -308,6 +316,7 @@ static NSString *const PreferencesKeyForViewBounds (NSString *identifier)
 
 - (IBAction)goPreviousTab:(id)sender
 {
+    #pragma unused (sender)
     NSUInteger selectedIndex = self.indexOfSelectedController;
     NSUInteger numberOfControllers = [_viewControllers count];
 

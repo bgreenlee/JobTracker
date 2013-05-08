@@ -73,6 +73,7 @@ failedJobNotificationsEnabled;
 }
 
 - (IBAction)showPreferences:(id)sender {
+    #pragma unused (sender)
     [self.preferencesWindowController showWindow:nil];
 }
 
@@ -102,6 +103,7 @@ failedJobNotificationsEnabled;
 }
 
 - (void)receiveWakeNote:(NSNotification*)note {
+    #pragma unused (note)
     if ([self isConfigured]) {
         // Kill off the current refresh schedule.
         [self stopTimer];
@@ -119,6 +121,7 @@ failedJobNotificationsEnabled;
 }
 
 - (IBAction)refresh:(id)sender {
+    #pragma unused (sender)
     [self startRefresh];
     [jtState refresh];
     if (jtState.currentError) {
@@ -129,6 +132,9 @@ failedJobNotificationsEnabled;
 }
 
 - (void)setError:(NSError *)error {
+    // right now we're not actually looking at error since there's only one error we're raising
+    // (url can't be reached), but we will probably want to handle others in the future (e.g. parsing error)
+    #pragma unused (error)
     NSMenuItem *refresh = [statusMenu itemWithTag:REFRESH_TAG];
     NSDictionary *attrDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [NSFont boldSystemFontOfSize:13.0], NSFontAttributeName,
@@ -229,6 +235,7 @@ failedJobNotificationsEnabled;
 }
 
 - (IBAction)openInBrowser:(id)sender {
+    #pragma unused (sender)
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]]];
 }
 

@@ -95,6 +95,7 @@
     __block NSTextView *textView = self.textView;
     [self.attributedStringValue enumerateAttribute:NSLinkAttributeName inRange:stringRange options:0 usingBlock:^(id value, NSRange range, BOOL *stop)
     {
+        #pragma unused (stop)
         if (value)
         {
             NSUInteger rectCount = 0;

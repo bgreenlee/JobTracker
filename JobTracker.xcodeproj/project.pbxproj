@@ -576,7 +576,17 @@
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				"OTHER_CFLAGS[arch=*]" = (
+					"-Wall",
+					"-Wextra",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -594,7 +604,17 @@
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+				);
+				"OTHER_CFLAGS[arch=*]" = (
+					"-Wall",
+					"-Wextra",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

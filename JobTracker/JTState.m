@@ -75,6 +75,7 @@ static JTState *shared;
                                 @"reserved_reduce_slots", @"map_task_capacity", @"reduce_task_capacity", @"avg_tasks_per_node",
                                 @"blacklisted_nodes", @"excluded_nodes", nil];
             [attribs enumerateObjectsUsingBlock:^(id attrib, NSUInteger idx, BOOL *stop) {
+                #pragma unused (stop)
                 NSString *value = [[[nodes objectAtIndex:idx] stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [clusterSummary setObject:value forKey:attrib];
             }];
@@ -85,6 +86,7 @@ static JTState *shared;
     NSArray *dataTables = [document nodesForXPath:@".//table[@class='datatable']" error:nil];
     NSArray *jobTypes = [NSArray arrayWithObjects:@"running", @"completed", @"failed", nil];
     [jobTypes enumerateObjectsUsingBlock:^(id jobType, NSUInteger idx, BOOL *stop) {
+        #pragma unused (stop)
         if (idx >= [dataTables count]) {
             return;
         }
@@ -98,6 +100,7 @@ static JTState *shared;
                                 @"job_scheduling_info", @"diagnostic_info", nil];
             NSMutableDictionary *jobData = [[NSMutableDictionary alloc] init];
             [attribs enumerateObjectsUsingBlock:^(id attrib, NSUInteger idx, BOOL *stop) {
+                #pragma unused (stop)
                 NSString *value = [[[jobCells objectAtIndex:idx] stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
                 [jobData setObject:value forKey:attrib];
             }];

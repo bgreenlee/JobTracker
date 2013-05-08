@@ -36,6 +36,7 @@
 }
 
 -(BOOL)windowShouldClose:(id)sender {
+    #pragma unused (sender)
     [generalViewController saveSettings];
     [delegate preferencesUpdated];
     return YES;
