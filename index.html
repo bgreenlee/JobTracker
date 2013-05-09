@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Jobtracker</title>
+    <title>JobTracker.app</title>
   </head>
 
   <body>
@@ -18,12 +18,11 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/bgreenlee/JobTracker">View on GitHub</a>
 
-          <h1 id="project_title">Jobtracker</h1>
-          <h2 id="project_tagline">Hadoop JobTracker OS X Menu Bar App</h2>
+          <h1 id="project_title">JobTracker.app</h1>
+          <h2 id="project_tagline">Hadoop JobTracker Mac Menu Bar App</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/bgreenlee/JobTracker/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/bgreenlee/JobTracker/tarball/master">Download this project as a tar.gz file</a>
+              <a href="http://cl.ly/2G0d381v0a0R/download/JobTracker.app.zip"><img src="images/button_download.png" alt="Download"></a>
             </section>
         </header>
     </div>
@@ -31,32 +30,44 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <p>JobTracker.app is a Mac menu bar app interface to the Hadoop JobTracker. It gives you easy access to jobs in JobTracker, and
+        provides Growl/Notification Center notices of starting, completed, and failed jobs.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+        <h3>Installation and Usage</h3>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+        <p>Click the download button above to download the zipped application. Just
+        unzip it and drop it into your Applications folder. Running it will put a little pith helmet in your menu bar.
+        Clicking that gets you this menu:</p>
 
-<h3>Designer Templates</h3>
+        <img src="http://f.cl.ly/items/1C1u470C051R2k3G0814/jt-main-menu.png" alt="Main Menu"/>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>Rather Drive Stick?</h3>
+        <p>You&#8217;ll first need to go to Preferences and enter your JobTracker URL:</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+        <img src="http://cl.ly/image/0l3d3i2j2G1y/jt-preferences.png" alt="Preferences" />
 
-<h3>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+        <p>By default it will track all jobs. You probably don&#8217;t want this, so put your username and any other
+        usernames you want to track in the &#8220;Usernames to track&#8221; field, comma-separated.</p>
 
-<h3>Support or Contact</h3>
+        <p>Note that this has only been tested with the version of Hadoop that <a href="https://etsy.com">Etsy</a> is running internally. Due to
+        the somewhat horrifying way that the app gets the JobTracker data (by parsing the JobTracker HTML page,
+        since there&#8217;s no API to JobTracker except via Java), it&#8217;s not unlikely that it could break on a different
+        version of Hadoop/JobTracker. If you try it and it doesn&#8217;t work for you, and you can send me HTML source
+        of your JobTracker page (please feel free to munge job/usernames/urls so as not to divulge any proprietary
+        information), I can try to get it working.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+        <h3>Thanks</h3>
+
+        <p>Much thanks goes to <a href="https://github.com/precipice">Marc Hedlund</a>, whose
+        <a href="https://github.com/precipice/Dragon-s-Breath">Dragon&#8217;s Breath</a> menu bar app (also in the
+        <a href="https://itunes.apple.com/us/app/dragons-breath/id453746086?mt=12">App Store</a>) served as my starting point.</p>
+
+        <h3>Contact</h3>
+
+        <p><a href="&#x6d;&#x61;&#x69;&#108;&#116;&#111;&#58;&#98;&#x72;&#x61;&#100;&#x40;&#101;&#116;&#x73;&#x79;&#x2e;&#x63;&#111;&#109;">&#x62;&#x72;&#x61;&#x64;&#64;&#x65;&#x74;&#115;&#121;&#x2e;&#x63;&#111;&#109;</a> / <a href="https://twitter.com/bgreenlee">@bgreenlee</a></p>
+
       </section>
     </div>
 
