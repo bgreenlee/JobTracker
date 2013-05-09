@@ -5,11 +5,11 @@ provides Growl/Notification Center notices of starting, completed, and failed jo
 
 ## Installation and Usage
 
-**You can download the binary [here](http://cl.ly/3P2g1W2r2T2l/download/JobTracker.app.zip).** Just
+**You can download the binary [here](http://cl.ly/3B2E061a192D/download/JobTracker.app.zip).** Just
 unzip it and drop it into your Applications folder. Running it will put a little pith helmet in your menu bar.
 Clicking that gets you this menu:
 
-![Main Menu](http://cl.ly/image/2J260C1L3B0Q/jt-main-menu.png)
+![Main Menu](http://f.cl.ly/items/1C1u470C051R2k3G0814/jt-main-menu.png)
 
 You'll first need to go to Preferences and enter your JobTracker URL:
 
