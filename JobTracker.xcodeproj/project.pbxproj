@@ -11,6 +11,8 @@
 		A245C1D91730CF22004F7D21 /* JobTracker.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A245C1D81730CF22004F7D21 /* JobTracker.entitlements */; };
 		A25363DD172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DC172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m */; };
 		A25363E0172D791500D2ECF1 /* HyperlinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */; };
+		A25B7AA3173B4D4D009A97AE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25B7AA2173B4D4D009A97AE /* Sparkle.framework */; };
+		A25B7AA6173B5D9C009A97AE /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A25B7AA2173B4D4D009A97AE /* Sparkle.framework */; };
 		A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */ = {isa = PBXBuildFile; fileRef = A28D04B8172E3B8000DEBCBE /* pith helmet error.png */; };
 		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
 		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
@@ -55,6 +57,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A25B7AA0173B4A0F009A97AE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A25B7AA6173B5D9C009A97AE /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A2960200165174BF00388031 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +87,7 @@
 		A25363DC172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+Hyperlink.m"; path = "NSAttributedString+Hyperlink/NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		A25363DE172D791500D2ECF1 /* HyperlinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperlinkTextField.h; sourceTree = "<group>"; };
 		A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperlinkTextField.m; sourceTree = "<group>"; };
+		A25B7AA2173B4D4D009A97AE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		A28D04B8172E3B8000DEBCBE /* pith helmet error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet error.png"; sourceTree = "<group>"; };
 		A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "Pith Helmet.iconset"; sourceTree = "<group>"; };
 		A290CAE2172B1810004E08F8 /* pith helmet small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet small.png"; sourceTree = "<group>"; };
@@ -134,6 +147,7 @@
 			files = (
 				A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
 				A2F8AF201655BABA00D877B3 /* Growl.framework in Frameworks */,
+				A25B7AA3173B4D4D009A97AE /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +228,7 @@
 		A2E2CF901634F40100CAF8F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A25B7AA2173B4D4D009A97AE /* Sparkle.framework */,
 				A2F8AF1F1655BABA00D877B3 /* Growl.framework */,
 				A2E2CF911634F40100CAF8F9 /* Cocoa.framework */,
 				A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */,
@@ -320,6 +335,7 @@
 				A2E2CF8A1634F40100CAF8F9 /* Frameworks */,
 				A2E2CF8B1634F40100CAF8F9 /* Resources */,
 				A2960200165174BF00388031 /* CopyFiles */,
+				A25B7AA0173B4A0F009A97AE /* CopyFiles */,
 			);
 			buildRules = (
 			);
