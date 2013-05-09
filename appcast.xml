@@ -2,13 +2,14 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>JobTracker.app Changelog</title>
-        <link>https://raw.github.com/bgreenlee/JobTracker/master/appcast.xml</link>
+        <link>https://raw.github.com/bgreenlee/JobTracker/gh-pages/appcast.xml</link>
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 1.2 (now with Sparkle for easy updates)</title>
+            <title>Version 1.2.1</title>
+            <sparkle:releaseNotesLink>https://raw.github.com/bgreenlee/JobTracker/gh-pages/release-notes/1.2.1.html</sparkle:releaseNotesLink>
             <pubDate>Wed, 08 May 2013 20:48:11 -0700</pubDate>
-            <enclosure url="http://you.com/app/Your Great App 2.0.zip" sparkle:version="2.0" length="1623481" type="application/octet-stream" />
+            <enclosure url="http://cl.ly/3B2E061a192D/download/JobTracker.app.zip" sparkle:version="1.2.1" length="2640999" type="application/octet-stream" />
         </item>
     </channel>
 </rss>
