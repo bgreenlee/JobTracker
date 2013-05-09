@@ -5,5 +5,5 @@ provides Growl/Notification Center notices of starting, completed, and failed jo
 
 See the [JobTracker.app Home Page](http://bgreenlee.github.io/JobTracker/) for more information and to download the binary.
 
-
-
+If you have any problems or suggestions, please [open an issue](https://github.com/bgreenlee/JobTracker/issues). Of course,
+pull requests are always welcome as well.
