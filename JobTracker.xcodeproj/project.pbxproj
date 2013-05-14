@@ -13,6 +13,8 @@
 		A25363E0172D791500D2ECF1 /* HyperlinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */; };
 		A25B7AA3173B4D4D009A97AE /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A25B7AA2173B4D4D009A97AE /* Sparkle.framework */; };
 		A25B7AA6173B5D9C009A97AE /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A25B7AA2173B4D4D009A97AE /* Sparkle.framework */; };
+		A2614FF81741E6B300D3E717 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
+		A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
 		A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */ = {isa = PBXBuildFile; fileRef = A28D04B8172E3B8000DEBCBE /* pith helmet error.png */; };
 		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
 		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
@@ -41,8 +43,6 @@
 		A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */; };
 		A2E2CFBC1634F40100CAF8F9 /* JTStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */; };
 		A2E2CFCB1634FFB100CAF8F9 /* JTStatusMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */; };
-		A2F8AF201655BABA00D877B3 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
-		A2F8AF221655BAFC00D877B3 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2F8AF1F1655BABA00D877B3 /* Growl.framework */; };
 		A2F8C5331649EFC2005FC856 /* JTState.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F8C5321649EFC2005FC856 /* JTState.m */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A2F8AF221655BAFC00D877B3 /* Growl.framework in CopyFiles */,
+				A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +88,7 @@
 		A25363DE172D791500D2ECF1 /* HyperlinkTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperlinkTextField.h; sourceTree = "<group>"; };
 		A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperlinkTextField.m; sourceTree = "<group>"; };
 		A25B7AA2173B4D4D009A97AE /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		A2614FF71741E6B300D3E717 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		A28D04B8172E3B8000DEBCBE /* pith helmet error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet error.png"; sourceTree = "<group>"; };
 		A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "Pith Helmet.iconset"; sourceTree = "<group>"; };
 		A290CAE2172B1810004E08F8 /* pith helmet small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pith helmet small.png"; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTStateTests.m; sourceTree = "<group>"; };
 		A2E2CFC91634FFB100CAF8F9 /* JTStatusMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTStatusMenu.h; sourceTree = "<group>"; };
 		A2E2CFCA1634FFB100CAF8F9 /* JTStatusMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTStatusMenu.m; sourceTree = "<group>"; };
-		A2F8AF1F1655BABA00D877B3 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		A2F8C5311649EFC2005FC856 /* JTState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTState.h; sourceTree = "<group>"; };
 		A2F8C5321649EFC2005FC856 /* JTState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTState.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
-				A2F8AF201655BABA00D877B3 /* Growl.framework in Frameworks */,
 				A25B7AA3173B4D4D009A97AE /* Sparkle.framework in Frameworks */,
+				A2614FF81741E6B300D3E717 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,8 +228,8 @@
 		A2E2CF901634F40100CAF8F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A2614FF71741E6B300D3E717 /* Growl.framework */,
 				A25B7AA2173B4D4D009A97AE /* Sparkle.framework */,
-				A2F8AF1F1655BABA00D877B3 /* Growl.framework */,
 				A2E2CF911634F40100CAF8F9 /* Cocoa.framework */,
 				A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */,
 				A2E2CF931634F40100CAF8F9 /* Other Frameworks */,
@@ -336,6 +336,7 @@
 				A2E2CF8B1634F40100CAF8F9 /* Resources */,
 				A2960200165174BF00388031 /* CopyFiles */,
 				A25B7AA0173B4A0F009A97AE /* CopyFiles */,
+				A2614FFE1741E9A800D3E717 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -426,6 +427,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A2614FFE1741E9A800D3E717 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#codesign -f -v -s \"3rd Party Mac Developer Application: Hack Arts (TS246368KR)\" ./Growl.framework/Versions/A\ncodesign -f -v -s \"Developer ID Application: Hack Arts\" ./Growl.framework/Versions/A";
+		};
 		A2E2CFAC1634F40100CAF8F9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -540,6 +554,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Hack Arts";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -556,6 +571,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -570,6 +586,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Developer ID Application: Hack Arts";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -579,6 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;

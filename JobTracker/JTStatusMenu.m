@@ -253,4 +253,9 @@ failedJobNotificationsEnabled;
     }
 }
 
+// growl delegate method
+- (BOOL) hasNetworkClientEntitlement {
+    return YES;
+}
+
 @end
