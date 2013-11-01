@@ -375,6 +375,11 @@
 				CLASSPREFIX = JT;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Hack Arts";
+				TargetAttributes = {
+					A2E2CF8C1634F40100CAF8F9 = {
+						DevelopmentTeam = TS246368KR;
+					};
+				};
 			};
 			buildConfigurationList = A2E2CF871634F40100CAF8F9 /* Build configuration list for PBXProject "JobTracker" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -429,7 +434,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		A2614FFE1741E9A800D3E717 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -438,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Developer ID Application: Hack Arts\"\n#codesign -f -v -s \"3rd Party Mac Developer Application: Hack Arts (TS246368KR)\" ./Growl.framework/Versions/A\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer\"\n#IDENTITY=\"Developer ID Application: Hack Arts\"\n#IDENTITY=\"3rd Party Mac Developer Application: Hack Arts\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
 		};
 		A2E2CFAC1634F40100CAF8F9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -603,7 +608,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = JobTracker/JobTracker.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,7 +628,7 @@
 					"-Wextra",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C67263C7-6FCF-4C44-86E5-005B5865609A";
+				PROVISIONING_PROFILE = "A48944AF-151C-4698-9162-F5C5FC0F1706";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -632,7 +638,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = JobTracker/JobTracker.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -651,7 +658,7 @@
 					"-Wextra",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C67263C7-6FCF-4C44-86E5-005B5865609A";
+				PROVISIONING_PROFILE = "A48944AF-151C-4698-9162-F5C5FC0F1706";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
