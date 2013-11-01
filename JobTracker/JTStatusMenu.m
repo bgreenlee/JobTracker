@@ -266,9 +266,9 @@ failedJobNotificationsEnabled;
 #pragma unused (userData)
     // Get the string.
     NSString *pboardString = [pboard stringForType:NSPasteboardTypeString];
-    
-    if ([pboardString rangeOfString:@"job_\\d+" options:NSRegularExpressionSearch].location != NSNotFound) {
-        [self openJobInBrowser:pboardString];
+    NSString *trimmedPboardString = [pboardString stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    if ([trimmedPboardString rangeOfString:@"job_\\d+" options:NSRegularExpressionSearch].location != NSNotFound) {
+        [self openJobInBrowser:trimmedPboardString];
     } else {
         *error = NSLocalizedString(@"Error: invalid job id.",
                                    @"job id didn't match the expected format.");

@@ -15,7 +15,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     #pragma unused (aNotification)
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
-    JTStatusMenu *jtStatusMenu = [[JTStatusMenu alloc] init];;
+    JTStatusMenu *jtStatusMenu = [[JTStatusMenu alloc] init];
     [NSApp setServicesProvider:jtStatusMenu];
     NSUpdateDynamicServices();
 }
