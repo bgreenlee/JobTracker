@@ -46,8 +46,9 @@ failedJobNotificationsEnabled;
 }
 
 - (id)init {
-    self = [super init];
-    [self loadPreferences];
+    if ((self = [super init])) {
+        [self loadPreferences];
+    }
     return self;
 }
 
