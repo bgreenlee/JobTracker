@@ -443,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer\"\n#IDENTITY=\"Developer ID Application: Hack Arts\"\n#IDENTITY=\"3rd Party Mac Developer Application: Hack Arts\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer\"\n#IDENTITY=\"Developer ID Application: Hack Arts\"\n#IDENTITY=\"3rd Party Mac Developer Application: Hack Arts\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\" --deep\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\" --deep";
 		};
 		A2E2CFAC1634F40100CAF8F9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
