@@ -13,7 +13,8 @@
 		A25363E0172D791500D2ECF1 /* HyperlinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */; };
 		A2614FF81741E6B300D3E717 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
 		A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
-		A266E6DF18349A9F00F40528 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; };
+		A266E6E018349B9900F40528 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; };
+		A266E6E118349BDD00F40528 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; };
 		A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */ = {isa = PBXBuildFile; fileRef = A28D04B8172E3B8000DEBCBE /* pith helmet error.png */; };
 		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
 		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
@@ -71,6 +72,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A266E6E118349BDD00F40528 /* Sparkle.framework in CopyFiles */,
 				A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A266E6E018349B9900F40528 /* Sparkle.framework in Frameworks */,
 				A2E2CF921634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
-				A266E6DF18349A9F00F40528 /* Sparkle.framework in Frameworks */,
 				A2614FF81741E6B300D3E717 /* Growl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
