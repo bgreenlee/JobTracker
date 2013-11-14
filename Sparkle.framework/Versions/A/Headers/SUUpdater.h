@@ -55,6 +55,7 @@
 // This IBAction is meant for a main menu item. Hook up any menu item to this action,
 // and Sparkle will check for updates and report back its findings verbosely.
 - (IBAction)checkForUpdates:(id)sender;
+- (void)checkForUpdatesAndInstallAutomatically:(id)sender;
 
 // This kicks off an update meant to be programmatically initiated. That is, it will display no UI unless it actually finds an update,
 // in which case it proceeds as usual. If the fully automated updating is turned on, however, this will invoke that behavior, and if an
