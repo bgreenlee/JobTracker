@@ -10,9 +10,6 @@
 
 @implementation JTJob
 
-@synthesize jobId, priority, user, name, displayName, mapPctComplete, mapTotal, mapsCompleted,
-reducePctComplete, reduceTotal, reducesComplete, jobSchedulingInfo, diagnosticInfo;
-
 - (id)initWithDictionary:(NSDictionary *)dict {
     if ((self = [super init])) {
         jobData = dict;

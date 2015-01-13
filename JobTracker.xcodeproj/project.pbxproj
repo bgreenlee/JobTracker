@@ -12,9 +12,9 @@
 		A25363DD172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DC172D75D300D2ECF1 /* NSAttributedString+Hyperlink.m */; };
 		A25363E0172D791500D2ECF1 /* HyperlinkTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A25363DF172D791500D2ECF1 /* HyperlinkTextField.m */; };
 		A2614FF81741E6B300D3E717 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
-		A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; };
+		A2614FF91741E6B900D3E717 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A2614FF71741E6B300D3E717 /* Growl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A266E6E018349B9900F40528 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; };
-		A266E6E118349BDD00F40528 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; };
+		A266E6E118349BDD00F40528 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A266E6DE18349A9F00F40528 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A28D04B9172E3B8000DEBCBE /* pith helmet error.png in Resources */ = {isa = PBXBuildFile; fileRef = A28D04B8172E3B8000DEBCBE /* pith helmet error.png */; };
 		A290CAE1172B14C9004E08F8 /* Pith Helmet.iconset in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE0172B14C9004E08F8 /* Pith Helmet.iconset */; };
 		A290CAE3172B1810004E08F8 /* pith helmet small.png in Resources */ = {isa = PBXBuildFile; fileRef = A290CAE2172B1810004E08F8 /* pith helmet small.png */; };
@@ -364,7 +364,7 @@
 			name = JobTrackerTests;
 			productName = JobTrackerTests;
 			productReference = A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -373,7 +373,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JT;
-				LastUpgradeCheck = 0500;
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Hack Arts";
 				TargetAttributes = {
 					A2E2CF8C1634F40100CAF8F9 = {
@@ -443,7 +444,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Mac Developer\"\n#IDENTITY=\"Developer ID Application: Hack Arts\"\n#IDENTITY=\"3rd Party Mac Developer Application: Hack Arts\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\" --deep\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\" --deep";
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n#IDENTITY=\"Mac Developer\"\n#IDENTITY=\"Developer ID Application: Hack Arts\"\nIDENTITY=\"Mac Developer: Brad Greenlee (3NP42LL5VS)\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Growl.framework/Versions/A\" --deep\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\" --deep";
 		};
 		A2E2CFAC1634F40100CAF8F9 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -558,7 +559,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Hack Arts";
+				CODE_SIGN_IDENTITY = "Mac Developer: Brad Greenlee (83CNLG4MTU)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -573,7 +574,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
@@ -589,7 +590,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application: Hack Arts";
+				CODE_SIGN_IDENTITY = "Mac Developer: Brad Greenlee (83CNLG4MTU)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -598,7 +599,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
@@ -608,8 +609,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = JobTracker/JobTracker.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,7 +620,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -629,7 +630,7 @@
 					"-Wextra",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A48944AF-151C-4698-9162-F5C5FC0F1706";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -639,8 +640,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = JobTracker/JobTracker.entitlements;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -650,7 +651,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTracker/JobTracker-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -660,7 +661,7 @@
 					"-Wextra",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A48944AF-151C-4698-9162-F5C5FC0F1706";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
