@@ -240,13 +240,15 @@ failedJobNotificationsEnabled, cdhVersion;
 }
 
 - (void)openJobInBrowser:(NSString *)jobId {
-    NSString *jobUrl = [NSString stringWithFormat:@"%@/jobdetails.jsp?jobid=%@", jobTrackerURL, jobId];
+    NSString *formatString = cdhVersion == 4 ? @"%@/jobdetails.jsp?jobid=%@" : @"%@/cluster/app/%@";
+    NSString *jobUrl = [NSString stringWithFormat:formatString, jobTrackerURL, jobId];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobUrl]];
 }
 
 - (IBAction)openInBrowser:(id)sender {
     #pragma unused (sender)
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:@"/jobtracker.jsp"]]];
+    NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/cluster";
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[jobTrackerURL stringByAppendingString:urlSuffix]]];
 }
 
 - (void)preferencesUpdated {
