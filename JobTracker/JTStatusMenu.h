@@ -38,6 +38,7 @@
 @property(nonatomic) BOOL startingJobNotificationsEnabled;
 @property(nonatomic) BOOL completedJobNotificationsEnabled;
 @property(nonatomic) BOOL failedJobNotificationsEnabled;
+@property(nonatomic) NSInteger cdhVersion;
 
 - (IBAction)refresh:(id)sender;
 - (void)setError:(NSError *)error;

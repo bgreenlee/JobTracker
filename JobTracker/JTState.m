@@ -61,8 +61,69 @@ static JTState *shared;
     }
 }
 
-// TODO: set an error if we can't parse the page
 - (void)parse:(NSXMLDocument *)document {
+    NSInteger cdhVersion = [[NSUserDefaults standardUserDefaults] integerForKey:@"cdhVersion"];
+    if (cdhVersion == 4) {
+        [self parseCDH4:document];
+    } else {
+        [self parseCDH5:document];
+    }
+}
+
+- (void)parseCDH5:(NSXMLDocument *)document {
+    NSMutableArray *runningList = [[NSMutableArray alloc] init];
+    NSMutableArray *completedList = [[NSMutableArray alloc] init];
+    NSMutableArray *failedList = [[NSMutableArray alloc] init];
+
+    NSArray *apps = [document nodesForXPath:@"/apps/*" error:nil];
+    for (NSXMLElement *app in apps) {
+        NSMutableDictionary *jobData = [[NSMutableDictionary alloc] init];
+        jobData[@"user"] = [[[app nodesForXPath:@"./user" error:nil] objectAtIndex:0] stringValue];
+        if (self.usernames == nil || [self.usernames count] == 0 || [self.usernames containsObject:jobData[@"user"]]) {
+            jobData[@"job_id"] = [[[app nodesForXPath:@"./id" error:nil] objectAtIndex:0] stringValue];
+            jobData[@"name"] = [[[app nodesForXPath:@"./name" error:nil] objectAtIndex:0] stringValue];
+            NSString *state = [[[app nodesForXPath:@"./state" error:nil] objectAtIndex:0] stringValue];
+            JTJob *job = [[JTJob alloc] initWithDictionary:jobData];
+
+            if ([state isEqualToString:@"STARTED"] || [state isEqualToString:@"RUNNING"]) {
+                [runningList addObject:job];
+            } else if ([state isEqualToString:@"FINISHED"] || [state isEqualToString:@"SUCCEEDED"]) {
+                [completedList addObject:job];
+            } else if ([state isEqualToString:@"FAILED"]) {
+                [failedList addObject:job];
+            }
+        }
+    }
+    [jobs setObject:runningList forKey:@"running"];
+    [jobs setObject:completedList forKey:@"completed"];
+    [jobs setObject:failedList forKey:@"failed"];
+    
+    // check/update last running job list
+    if (lastRunningJobs != nil) {
+        NSArray *runningJobs = [jobs objectForKey:@"running"];
+        for (JTJob *job in runningJobs) {
+            if (![lastRunningJobs containsObject:job]) {
+                [self.delegate jobStarted:job];
+            }
+        }
+        for (JTJob *job in lastRunningJobs) {
+            NSArray *completedJobs = [jobs objectForKey:@"completed"];
+            if ([completedJobs containsObject:job]) {
+                [self.delegate jobCompleted:job];
+            }
+            NSArray *failedJobs = [jobs objectForKey:@"failed"];
+            if ([failedJobs containsObject:job]) {
+                [self.delegate jobFailed:job];
+            }
+        }
+    }
+    lastRunningJobs = [jobs objectForKey:@"running"];
+    refreshRunning = NO;
+    [self.delegate stateUpdated];
+}
+
+// TODO: set an error if we can't parse the page
+- (void)parseCDH4:(NSXMLDocument *)document {
     // Cluster Summary
     NSArray *nodes = [document nodesForXPath:@".//table[1]" error:nil];
     NSXMLElement *clusterSummaryTable;
@@ -85,8 +146,7 @@ static JTState *shared;
     // Jobs tables
     NSArray *dataTables = [document nodesForXPath:@".//table[@class='datatable']" error:nil];
     NSArray *jobTypes = [NSArray arrayWithObjects:@"running", @"completed", @"failed", nil];
-    [jobTypes enumerateObjectsUsingBlock:^(id jobType, NSUInteger idx, BOOL *stop) {
-        #pragma unused (stop)
+    [jobTypes enumerateObjectsUsingBlock:^(id jobType, NSUInteger idx, BOOL *stop __unused) {
         if (idx >= [dataTables count]) {
             return;
         }

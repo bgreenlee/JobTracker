@@ -72,6 +72,28 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
 
 - (void)saveSettings {
     NSString *jobTrackerURL = [[jobTrackerURLCell stringValue] stringByReplacingOccurrencesOfString:@"/jobtracker.jsp" withString:@""];
+    if ([jobTrackerURL length] > 7 && !([[jobTrackerURL substringToIndex:7] isEqualToString:@"http://"] ||
+                                        [[jobTrackerURL substringToIndex:8] isEqualToString:@"https://"]))
+    {
+        jobTrackerURL = [@"http://" stringByAppendingString:jobTrackerURL];
+    }
+
+    // do a HEAD request to see what version of job tracker we're using (CDH4 or 5)
+    NSInteger cdhVersion = 4;
+    NSString *testCDH5URL = [jobTrackerURL stringByAppendingString:@"/ws/v1/cluster"];
+    NSMutableURLRequest *testCDH5Req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString: testCDH5URL]
+                                                       cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                   timeoutInterval:5.0f];
+    [testCDH5Req setHTTPMethod:@"HEAD"];
+    NSHTTPURLResponse *httpResponse = nil;
+    NSError *error = nil;
+    [NSURLConnection sendSynchronousRequest:testCDH5Req
+                          returningResponse:&httpResponse
+                                      error:&error];
+    if ([httpResponse statusCode] == 200) {
+        cdhVersion = 5;
+    }
+    
     NSString *usernames = [[usernamesCell stringValue] stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSInteger refreshInterval = [refreshIntervalCell integerValue];
     if (refreshInterval < 1) {
@@ -94,6 +116,7 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
     [defaults setBool:startingJobNotificationsEnabled forKey:@"startingJobNotificationsEnabled"];
     [defaults setBool:completedJobNotificationsEnabled forKey:@"completedJobNotificationsEnabled"];
     [defaults setBool:failedJobNotificationsEnabled forKey:@"failedJobNotificationsEnabled"];
+    [defaults setInteger:cdhVersion forKey:@"cdhVersion"];
 }
 
 @end
