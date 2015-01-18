@@ -32,7 +32,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
 
-        <p>JobTracker.app is a Mac menu bar app interface to the Hadoop JobTracker. It gives you easy access to jobs in JobTracker, and
+        <p>JobTracker.app is a Mac menu bar app interface to the Hadoop (CDH 4 & 5) JobTracker/Resource Manager. It gives you easy access to jobs in JobTracker, and
         provides Growl/Notification Center notices of starting, completed, and failed jobs.</p>
 
         <h3>Installation and Usage</h3>
@@ -52,12 +52,7 @@
         <p>By default it will track all jobs. You probably don&#8217;t want this, so put your username and any other
         usernames you want to track in the &#8220;Usernames to track&#8221; field, comma-separated.</p>
 
-        <p>Note that this has only been tested with the version of Hadoop that <a href="https://etsy.com">Etsy</a> is running internally. Due to
-        the somewhat horrifying way that the app gets the JobTracker data (by parsing the JobTracker HTML page,
-        since there&#8217;s no API to JobTracker except via Java), it&#8217;s not unlikely that it could break on a different
-        version of Hadoop/JobTracker. If you try it and it doesn&#8217;t work for you, and you can send me HTML source
-        of your JobTracker page (please feel free to munge job/usernames/urls so as not to divulge any proprietary
-        information), I can try to get it working.</p>
+        <p>Note that JobTracker currently supports only CDH 4 and 5.</p>
 
         <h3>Thanks</h3>
 
