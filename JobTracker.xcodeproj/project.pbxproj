@@ -57,15 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A25B7AA0173B4A0F009A97AE /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A2960200165174BF00388031 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -335,7 +326,6 @@
 				A2E2CF8A1634F40100CAF8F9 /* Frameworks */,
 				A2E2CF8B1634F40100CAF8F9 /* Resources */,
 				A2960200165174BF00388031 /* CopyFiles */,
-				A25B7AA0173B4A0F009A97AE /* CopyFiles */,
 				A2614FFE1741E9A800D3E717 /* ShellScript */,
 			);
 			buildRules = (
@@ -613,7 +603,7 @@
 		A2E2CFC01634F40100CAF8F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -645,7 +635,7 @@
 		A2E2CFC11634F40100CAF8F9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
