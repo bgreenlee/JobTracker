@@ -240,7 +240,7 @@ failedJobNotificationsEnabled, cdhVersion;
 }
 
 - (void)openJobInBrowser:(NSString *)jobId {
-    NSString *formatString = cdhVersion == 4 ? @"%@/jobdetails.jsp?jobid=%@" : @"%@/cluster/app/%@";
+    NSString *formatString = cdhVersion == 4 ? @"%@/jobdetails.jsp?jobid=%@" : @"%@/proxy/%@";
     NSString *jobUrl = [NSString stringWithFormat:formatString, jobTrackerURL, jobId];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobUrl]];
 }
