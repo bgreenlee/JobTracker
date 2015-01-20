@@ -39,15 +39,13 @@
                                                                 error:&error];
         
         if (document) {
-            [jtState performSelectorOnMainThread:@selector(pageLoaded:)
-                                        withObject:document
-                                   waitUntilDone:YES];
+            [jtState performSelector:@selector(pageLoaded:)
+                          withObject:document];
             return;
         }
     }
-    [jtState performSelectorOnMainThread:@selector(errorLoadingPage:)
-                              withObject:error
-                           waitUntilDone:NO];
+    [jtState performSelector:@selector(errorLoadingPage:)
+                  withObject:error];
 }
 
 @end

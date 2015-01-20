@@ -44,8 +44,10 @@ static JTState *shared;
 }
 
 - (void)pageLoaded:(NSXMLDocument *)document {
-    currentError = nil;
-    [self parse:document];
+    @synchronized(self) {
+        currentError = nil;
+        [self parse:document];
+    }
 }
 
 - (void)errorLoadingPage:(NSError *)error {
@@ -54,10 +56,12 @@ static JTState *shared;
 }
 
 - (void)refresh {
-    if (!refreshRunning) {
-        JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
-        [queue addOperation:plo];
-        refreshRunning = YES;
+    @synchronized(self) {
+        if (!refreshRunning) {
+            JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
+            [queue addOperation:plo];
+            refreshRunning = YES;
+        }
     }
 }
 
@@ -193,6 +197,6 @@ static JTState *shared;
     }
     lastRunningJobs = [jobs objectForKey:@"running"];
     refreshRunning = NO;
-    [self.delegate stateUpdated];
+    [self.delegate performSelectorOnMainThread:@selector(stateUpdated:) withObject:nil waitUntilDone:NO];
 }
 @end
