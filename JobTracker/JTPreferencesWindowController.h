@@ -11,8 +11,6 @@
 #import "JTGeneralPreferencesViewController.h"
 #import "JTAboutViewController.h"
 
-#define DEFAULT_REFRESH_INTERVAL 5
-
 @interface JTPreferencesWindowController : MASPreferencesWindowController {
     JTGeneralPreferencesViewController *generalViewController;
     JTAboutViewController *aboutViewController;
