@@ -9,7 +9,7 @@
 #import "MASPreferencesViewController.h"
 #import "LaunchAtLoginController.h"
 
-#define DEFAULT_REFRESH_INTERVAL 5
+#define DEFAULT_REFRESH_INTERVAL 10
 
 @interface JTGeneralPreferencesViewController : NSViewController <MASPreferencesViewController>
 
