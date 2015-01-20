@@ -11,7 +11,7 @@
 
 @implementation JTStatusMenu
 
-@synthesize jobTrackerURL, usernames, refreshInterval, startingJobNotificationsEnabled, completedJobNotificationsEnabled,
+@synthesize jobTrackerURL, usernames, customJobURL, refreshInterval, startingJobNotificationsEnabled, completedJobNotificationsEnabled,
 failedJobNotificationsEnabled, cdhVersion;
 
 - (void)awakeFromNib {
@@ -64,6 +64,7 @@ failedJobNotificationsEnabled, cdhVersion;
         jobTrackerURL = [@"http://" stringByAppendingString:jobTrackerURL];
     }
     usernames = [defaults stringForKey:@"usernames"];
+    customJobURL = [defaults stringForKey:@"customJobURL"];
     refreshInterval = [defaults integerForKey:@"refreshInterval"];
     if (refreshInterval == 0) {
         refreshInterval = DEFAULT_REFRESH_INTERVAL;
@@ -240,8 +241,14 @@ failedJobNotificationsEnabled, cdhVersion;
 }
 
 - (void)openJobInBrowser:(NSString *)jobId {
-    NSString *formatString = cdhVersion == 4 ? @"%@/jobdetails.jsp?jobid=%@" : @"%@/proxy/%@";
-    NSString *jobUrl = [NSString stringWithFormat:formatString, jobTrackerURL, jobId];
+    NSString *formatString;
+    if (customJobURL != nil && customJobURL.length > 0) {
+        formatString = customJobURL;
+    } else {
+        formatString = cdhVersion == 4 ? @"%url/jobdetails.jsp?jobid=%id" : @"%url/proxy/%id";
+    }
+    NSString *jobUrl = [formatString stringByReplacingOccurrencesOfString:@"%url" withString:jobTrackerURL];
+    jobUrl = [jobUrl stringByReplacingOccurrencesOfString:@"%id" withString:jobId];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:jobUrl]];
 }
 

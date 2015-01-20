@@ -10,7 +10,7 @@
 
 @implementation JTGeneralPreferencesViewController
 
-@synthesize jobTrackerURLCell, usernamesCell, refreshIntervalCell, startingJobNotificationPreference,
+@synthesize jobTrackerURLCell, usernamesCell, customJobURLCell, refreshIntervalCell, startingJobNotificationPreference,
 completedJobNotificationPreference, failedJobNotificationPreference, launchAtLoginPreference;
 
 - (id)init {
@@ -42,6 +42,11 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
     NSString *usernames = [defaults stringForKey:@"usernames"];
     if (usernames != nil) {
         [usernamesCell setStringValue:usernames];
+    }
+    
+    NSString *customJobURL = [defaults stringForKey:@"customJobURL"];
+    if (customJobURL != nil) {
+        [customJobURLCell setStringValue:customJobURL];
     }
 
     NSInteger refreshInterval = [defaults integerForKey:@"refreshInterval"];
@@ -95,6 +100,7 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
     }
     
     NSString *usernames = [[usernamesCell stringValue] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *customJobURL = [customJobURLCell stringValue];
     NSInteger refreshInterval = [refreshIntervalCell integerValue];
     if (refreshInterval < 1) {
         refreshInterval = 1;
@@ -112,6 +118,7 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
 
     [defaults setObject:jobTrackerURL forKey:@"jobTrackerURL"];
     [defaults setObject:usernames forKey:@"usernames"];
+    [defaults setObject:customJobURL forKey:@"customJobURL"];
     [defaults setInteger:refreshInterval forKey:@"refreshInterval"];
     [defaults setBool:startingJobNotificationsEnabled forKey:@"startingJobNotificationsEnabled"];
     [defaults setBool:completedJobNotificationsEnabled forKey:@"completedJobNotificationsEnabled"];

@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) JTPreferencesWindowController *preferencesWindowController;
 @property(nonatomic, copy) NSString *jobTrackerURL;
 @property(nonatomic, copy) NSString *usernames;
+@property(nonatomic, copy) NSString *customJobURL;
 @property(nonatomic) NSInteger refreshInterval;
 @property(nonatomic) BOOL startingJobNotificationsEnabled;
 @property(nonatomic) BOOL completedJobNotificationsEnabled;

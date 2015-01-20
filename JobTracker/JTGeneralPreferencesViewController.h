@@ -15,6 +15,7 @@
 
 @property(nonatomic, retain) IBOutlet NSTextFieldCell *jobTrackerURLCell;
 @property(nonatomic, retain) IBOutlet NSTextFieldCell *usernamesCell;
+@property(nonatomic, retain) IBOutlet NSTextFieldCell *customJobURLCell;
 @property(nonatomic, retain) IBOutlet NSTextFieldCell *refreshIntervalCell;
 @property(nonatomic, retain) IBOutlet NSButton *startingJobNotificationPreference;
 @property(nonatomic, retain) IBOutlet NSButton *completedJobNotificationPreference;
