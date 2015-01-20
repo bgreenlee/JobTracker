@@ -281,7 +281,7 @@ failedJobNotificationsEnabled, cdhVersion;
     // Get the string.
     NSString *pboardString = [pboard stringForType:NSPasteboardTypeString];
     NSString *trimmedPboardString = [pboardString stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-    if ([trimmedPboardString rangeOfString:@"job_\\d+" options:NSRegularExpressionSearch].location != NSNotFound) {
+    if ([trimmedPboardString rangeOfString:@"(job|application)_\\d+" options:NSRegularExpressionSearch].location != NSNotFound) {
         [self openJobInBrowser:trimmedPboardString];
     } else {
         *error = NSLocalizedString(@"Error: invalid job id.",
