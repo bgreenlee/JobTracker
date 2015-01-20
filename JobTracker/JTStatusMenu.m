@@ -262,7 +262,7 @@ failedJobNotificationsEnabled, cdhVersion;
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
-        NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps";
+        NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps?limit=1000";
         jtState.url = [NSURL URLWithString:[jobTrackerURL stringByAppendingString: urlSuffix]];
         [jtState setUsernameString:usernames];
         jtState.delegate = self;
