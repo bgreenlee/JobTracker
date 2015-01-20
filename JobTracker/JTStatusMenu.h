@@ -52,6 +52,7 @@
 - (void)startTimer;
 - (void)stopTimer;
 - (void)receiveWakeNote:(NSNotification*)note;
+- (NSURL*)getJtUrl;
 // JTStateDelegate methods
 - (void)stateUpdated;
 - (void)jobStarted:(JTJob *)job;

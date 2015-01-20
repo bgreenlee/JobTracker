@@ -35,9 +35,9 @@ failedJobNotificationsEnabled, cdhVersion;
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
-        NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps";
-        jtState.url = [NSURL URLWithString:[jobTrackerURL stringByAppendingString: urlSuffix]];
-        [jtState setUsernameString:usernames];
+
+        jtState.url = [self getJtUrl];
+
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];
@@ -51,6 +51,18 @@ failedJobNotificationsEnabled, cdhVersion;
         [self loadPreferences];
     }
     return self;
+}
+
+- (NSURL*)getJtUrl {
+    [jtState setUsernameString:usernames];
+
+    NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps?limit=1000";
+    if ([jtState.usernames count] == 1 && cdhVersion == 5) {
+        NSString *userString = [NSString stringWithFormat:@"&user=%@", jtState.usernames[0]];
+        urlSuffix = [urlSuffix stringByAppendingString:userString];
+    }
+
+    return [NSURL URLWithString:[jobTrackerURL stringByAppendingString: urlSuffix]];
 }
 
 - (void)loadPreferences {
@@ -262,9 +274,7 @@ failedJobNotificationsEnabled, cdhVersion;
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
-        NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps?limit=1000";
-        jtState.url = [NSURL URLWithString:[jobTrackerURL stringByAppendingString: urlSuffix]];
-        [jtState setUsernameString:usernames];
+        jtState.url = [self getJtUrl];
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];
