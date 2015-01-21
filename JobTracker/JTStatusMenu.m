@@ -36,7 +36,7 @@ failedJobNotificationsEnabled, cdhVersion;
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
 
-        jtState.url = [self getJtUrl];
+        jtState.urls = [self getJtUrls];
 
         jtState.delegate = self;
         [self refresh:nil];
@@ -53,16 +53,28 @@ failedJobNotificationsEnabled, cdhVersion;
     return self;
 }
 
-- (NSURL*)getJtUrl {
-    [jtState setUsernameString:usernames];
-
-    NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  @"/ws/v1/cluster/apps?limit=1000";
-    if ([jtState.usernames count] == 1 && cdhVersion == 5) {
-        NSString *userString = [NSString stringWithFormat:@"&user=%@", jtState.usernames[0]];
-        urlSuffix = [urlSuffix stringByAppendingString:userString];
+- (NSArray *)getJtUrls {
+    NSMutableArray *urls = [[NSMutableArray alloc] init];
+    NSString *urlSuffix = cdhVersion == 4 ? @"/jobtracker.jsp" :  [NSString stringWithFormat:@"/ws/v1/cluster/apps?limit=%d", JOB_REQUEST_LIMIT];
+    if (cdhVersion == 5) {
+        // if only one username is set, just request that user
+        if ([jtState.usernames count] == 1) {
+            NSString *userString = [NSString stringWithFormat:@"&user=%@", jtState.usernames[0]];
+            urlSuffix = [urlSuffix stringByAppendingString:userString];
+        }
+        // need two different urls for CDH5, one for running jobs, and one for failed/completed
+        NSString *runningJobsSuffix = [urlSuffix stringByAppendingString:@"&states=RUNNING"];
+        NSString *runningJobsUrlStr = [jobTrackerURL stringByAppendingString:runningJobsSuffix];
+        [urls addObject:[NSURL URLWithString:runningJobsUrlStr]];
+        
+        NSString *doneJobsSuffix = [urlSuffix stringByAppendingString:@"&states=FAILED,KILLED,FINISHED"];
+        NSString *doneJobsUrlStr = [jobTrackerURL stringByAppendingString:doneJobsSuffix];
+        [urls addObject:[NSURL URLWithString:doneJobsUrlStr]];
+    } else {
+        NSString *urlStr = [jobTrackerURL stringByAppendingString:urlSuffix];
+        [urls addObject:[NSURL URLWithString:urlStr]];
     }
-
-    return [NSURL URLWithString:[jobTrackerURL stringByAppendingString: urlSuffix]];
+    return urls;
 }
 
 - (void)loadPreferences {
@@ -274,7 +286,8 @@ failedJobNotificationsEnabled, cdhVersion;
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
-        jtState.url = [self getJtUrl];
+        [jtState setUsernameString:usernames];
+        jtState.urls = [self getJtUrls];
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];

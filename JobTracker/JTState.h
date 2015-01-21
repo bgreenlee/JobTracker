@@ -17,14 +17,14 @@
 
 @property(nonatomic, retain) NSMutableDictionary *clusterSummary;
 @property(nonatomic, retain) NSMutableDictionary *jobs;
-@property(nonatomic, retain) NSURL *url;
+@property(nonatomic, retain) NSArray *urls;
 @property(nonatomic, retain) NSArray *usernames;
 @property(nonatomic, retain) id delegate;
 @property(nonatomic, retain) NSError *currentError;
 
 + (id)sharedInstance;
 - (void)setUsernameString:(NSString *)usernames;
-- (void)pageLoaded:(NSXMLDocument *)document;
+- (void)pageLoadedWithDocument:(NSXMLDocument *)document;
 - (void)errorLoadingPage:(NSError *)error;
 - (void)refresh;
 - (void)parse:(NSXMLDocument *)document;

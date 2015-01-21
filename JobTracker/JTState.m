@@ -12,7 +12,7 @@
 @implementation JTState
 static JTState *shared;
 
-@synthesize clusterSummary, jobs, url, usernames, delegate, currentError;
+@synthesize clusterSummary, jobs, urls, usernames, delegate, currentError;
 
 + (id)sharedInstance {
     return shared;
@@ -35,15 +35,15 @@ static JTState *shared;
     return self;
 }
 
-- (void)setUsernameString:(NSString *)_usernames{
-    if (_usernames == nil || [_usernames isEqualToString:@""]) {
-        usernames = nil;
+- (void)setUsernameString:(NSString *)usernameString{
+    if (usernameString == nil || [usernameString isEqualToString:@""]) {
+        usernames = @[];
     } else {
-        usernames = [_usernames componentsSeparatedByString:@","];
+        usernames = [usernameString componentsSeparatedByString:@","];
     }
 }
 
-- (void)pageLoaded:(NSXMLDocument *)document {
+- (void)pageLoadedWithDocument:(NSXMLDocument *)document {
     @synchronized(self) {
         currentError = nil;
         [self parse:document];
@@ -58,7 +58,7 @@ static JTState *shared;
 - (void)refresh {
     @synchronized(self) {
         if (!refreshRunning) {
-            JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURL:url];
+            JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURLs:urls];
             [queue addOperation:plo];
             refreshRunning = YES;
         }
@@ -75,11 +75,16 @@ static JTState *shared;
 }
 
 - (void)parseCDH5:(NSXMLDocument *)document {
+    // Ugh, so hacky. We need to know if this is the RUNNING apps-only document
+    // so we know which lists to update
+    bool isRunningList = [document.URI rangeOfString:@"RUNNING"].location != NSNotFound;
+    
     NSMutableArray *runningList = [[NSMutableArray alloc] init];
     NSMutableArray *completedList = [[NSMutableArray alloc] init];
     NSMutableArray *failedList = [[NSMutableArray alloc] init];
 
     NSArray *apps = [document nodesForXPath:@"/apps/*" error:nil];
+    NSLog(@"found %ld apps in response", [apps count]);
     for (NSXMLElement *app in apps) {
         NSMutableDictionary *jobData = [[NSMutableDictionary alloc] init];
         jobData[@"user"] = [[[app nodesForXPath:@"./user" error:nil] objectAtIndex:0] stringValue];
@@ -89,18 +94,21 @@ static JTState *shared;
             NSString *state = [[[app nodesForXPath:@"./state" error:nil] objectAtIndex:0] stringValue];
             JTJob *job = [[JTJob alloc] initWithDictionary:jobData];
 
-            if ([state isEqualToString:@"STARTED"] || [state isEqualToString:@"RUNNING"]) {
+            if ([state isEqualToString:@"RUNNING"]) {
                 [runningList addObject:job];
-            } else if ([state isEqualToString:@"FINISHED"] || [state isEqualToString:@"SUCCEEDED"]) {
+            } else if ([state isEqualToString:@"FINISHED"]) {
                 [completedList addObject:job];
             } else if ([state isEqualToString:@"FAILED"]) {
                 [failedList addObject:job];
             }
         }
     }
-    [jobs setObject:runningList forKey:@"running"];
-    [jobs setObject:completedList forKey:@"completed"];
-    [jobs setObject:failedList forKey:@"failed"];
+    if (isRunningList) {
+        [jobs setObject:runningList forKey:@"running"];
+    } else {
+        [jobs setObject:completedList forKey:@"completed"];
+        [jobs setObject:failedList forKey:@"failed"];
+    }
     
     // check/update last running job list
     if (lastRunningJobs != nil) {
@@ -121,7 +129,10 @@ static JTState *shared;
             }
         }
     }
-    lastRunningJobs = [jobs objectForKey:@"running"];
+    
+    if (isRunningList) {
+        lastRunningJobs = [jobs objectForKey:@"running"];
+    }
     refreshRunning = NO;
     [self.delegate stateUpdated];
 }

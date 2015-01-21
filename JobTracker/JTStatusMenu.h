@@ -20,6 +20,8 @@
 #define FAILED_JOBS_TAG 3
 #define REFRESH_TAG 4
 
+#define JOB_REQUEST_LIMIT 100  // limit we pass to the CDH 5 API
+
 @interface JTStatusMenu : NSObject <JTPreferencesDelegate, JTStateDelegate, GrowlApplicationBridgeDelegate> {
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
@@ -52,7 +54,6 @@
 - (void)startTimer;
 - (void)stopTimer;
 - (void)receiveWakeNote:(NSNotification*)note;
-- (NSURL*)getJtUrl;
 // JTStateDelegate methods
 - (void)stateUpdated;
 - (void)jobStarted:(JTJob *)job;

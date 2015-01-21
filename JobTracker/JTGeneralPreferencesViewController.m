@@ -102,8 +102,8 @@ completedJobNotificationPreference, failedJobNotificationPreference, launchAtLog
     NSString *usernames = [[usernamesCell stringValue] stringByReplacingOccurrencesOfString:@" " withString:@""];
     NSString *customJobURL = [customJobURLCell stringValue];
     NSInteger refreshInterval = [refreshIntervalCell integerValue];
-    if (refreshInterval < 1) {
-        refreshInterval = 1;
+    if (refreshInterval < MINIMUM_REFRESH_INTERVAL) {
+        refreshInterval = MINIMUM_REFRESH_INTERVAL;
     }
     BOOL startingJobNotificationsEnabled = [startingJobNotificationPreference state] == NSOnState;
     BOOL completedJobNotificationsEnabled = [completedJobNotificationPreference state] == NSOnState;

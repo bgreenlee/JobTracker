@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface JTPageLoadOperation : NSOperation {
-    NSURL *targetURL;
+    NSArray *targetURLs;
 }
 
-@property(retain) NSURL *targetURL;
+@property(nonatomic, retain) NSArray *targetURLs;
 
-- (id)initWithURL:(NSURL*)url;
+- (id)initWithURLs:(NSArray *)urls;
 
 @end
