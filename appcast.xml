@@ -6,10 +6,10 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 1.3.14</title>
+            <title>Version 1.3.21</title>
             <sparkle:releaseNotesLink>http://bgreenlee.github.io/JobTracker/release-notes.html</sparkle:releaseNotesLink>
-            <pubDate>Sun, 20 January 2015 09:45:00 -0800</pubDate>
-            <enclosure url="http://files.footle.org/download/JobTracker/1.3.14/JobTracker.app.zip" sparkle:version="1.3.14" length="2788054" type="application/octet-stream" />
+            <pubDate>Wed, 21 January 2015 12:30:05 -0800</pubDate>
+            <enclosure url="http://files.footle.org/download/JobTracker/1.3.21/JobTracker.app.zip" sparkle:version="1.3.21" length="2789448" type="application/octet-stream" />
         </item>
     </channel>
 </rss>
