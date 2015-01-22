@@ -134,7 +134,7 @@ static JTState *shared;
         lastRunningJobs = [jobs objectForKey:@"running"];
     }
     refreshRunning = NO;
-    [self.delegate stateUpdated];
+    [self.delegate performSelectorOnMainThread:@selector(stateUpdated) withObject:nil waitUntilDone:NO];
 }
 
 // TODO: set an error if we can't parse the page
@@ -208,6 +208,6 @@ static JTState *shared;
     }
     lastRunningJobs = [jobs objectForKey:@"running"];
     refreshRunning = NO;
-    [self.delegate performSelectorOnMainThread:@selector(stateUpdated:) withObject:nil waitUntilDone:NO];
+    [self.delegate performSelectorOnMainThread:@selector(stateUpdated) withObject:nil waitUntilDone:NO];
 }
 @end
