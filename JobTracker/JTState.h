@@ -24,8 +24,6 @@
 
 + (id)sharedInstance;
 - (void)setUsernameString:(NSString *)usernames;
-- (void)pageLoadedWithDocument:(NSXMLDocument *)document;
-- (void)errorLoadingPage:(NSError *)error;
 - (void)refresh;
 - (void)parse:(NSXMLDocument *)document;
 @end

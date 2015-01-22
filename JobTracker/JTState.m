@@ -42,15 +42,6 @@ static JTState *shared;
     }
 }
 
-- (void)pageLoadedWithDocument:(NSXMLDocument *)document {
-    currentError = nil;
-    [self parse:document];
-}
-
-- (void)errorLoadingPage:(NSError *)error {
-    currentError = error;
-}
-
 - (void)refresh {
     @synchronized(self) {
         [self fetchDataFromURLs:urls];
@@ -80,13 +71,14 @@ static JTState *shared;
                                                      error:&error];
             
             if (document) {
+                currentError = nil;
                 document.URI = [targetURL absoluteString]; // so we know where this came from
-                [self pageLoadedWithDocument:document];
+                [self parse:document];
             }
         }
         
         if (document == nil) {
-            [self errorLoadingPage:error];
+            currentError = error;
         }
     }
 }
