@@ -7,7 +7,6 @@
 //
 
 #import "JTState.h"
-#import "JTPageLoadOperation.h"
 
 @implementation JTState
 static JTState *shared;
@@ -44,23 +43,50 @@ static JTState *shared;
 }
 
 - (void)pageLoadedWithDocument:(NSXMLDocument *)document {
-    @synchronized(self) {
-        currentError = nil;
-        [self parse:document];
-    }
+    currentError = nil;
+    [self parse:document];
 }
 
 - (void)errorLoadingPage:(NSError *)error {
     currentError = error;
-    refreshRunning = NO;
 }
 
 - (void)refresh {
     @synchronized(self) {
-        if (!refreshRunning) {
-            JTPageLoadOperation *plo = [[JTPageLoadOperation alloc] initWithURLs:urls];
-            [queue addOperation:plo];
-            refreshRunning = YES;
+        [self fetchDataFromURLs:urls];
+    }
+}
+
+// TODO: move this and the parsing code elsewhere
+- (void)fetchDataFromURLs:(NSArray *)targetURLs {
+    for (NSURL *targetURL in targetURLs) {
+        // make the request. We used to just pass the url to NSXMLDocument's initWithContentsOfURL, but that
+        // seems to send the wrong content-type, and CDH5 gives us back json, which NSXMLDocument kindly wraps
+        // in XTHML for us.
+        NSLog(@"sending request: %@", targetURL);
+        NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:targetURL];
+        [req setValue:@"application/xml;level=1, */*" forHTTPHeaderField:@"Accept"];
+        NSHTTPURLResponse *httpResponse = nil;
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:req
+                                             returningResponse:&httpResponse
+                                                         error:&error];
+        
+        NSXMLDocument *document = nil;
+        if (data) {
+            NSLog(@"received %ld bytes", [data length]);
+            document = [[NSXMLDocument alloc] initWithData:data
+                                                   options:NSXMLDocumentTidyHTML
+                                                     error:&error];
+            
+            if (document) {
+                document.URI = [targetURL absoluteString]; // so we know where this came from
+                [self pageLoadedWithDocument:document];
+            }
+        }
+        
+        if (document == nil) {
+            [self errorLoadingPage:error];
         }
     }
 }
@@ -72,6 +98,7 @@ static JTState *shared;
     } else {
         [self parseCDH5:document];
     }
+    [self.delegate performSelectorOnMainThread:@selector(stateUpdated) withObject:nil waitUntilDone:NO];
 }
 
 - (void)parseCDH5:(NSXMLDocument *)document {
@@ -133,8 +160,6 @@ static JTState *shared;
     if (isRunningList) {
         lastRunningJobs = [jobs objectForKey:@"running"];
     }
-    refreshRunning = NO;
-    [self.delegate performSelectorOnMainThread:@selector(stateUpdated) withObject:nil waitUntilDone:NO];
 }
 
 // TODO: set an error if we can't parse the page
@@ -207,7 +232,5 @@ static JTState *shared;
         }
     }
     lastRunningJobs = [jobs objectForKey:@"running"];
-    refreshRunning = NO;
-    [self.delegate performSelectorOnMainThread:@selector(stateUpdated) withObject:nil waitUntilDone:NO];
 }
 @end

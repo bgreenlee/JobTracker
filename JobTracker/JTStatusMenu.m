@@ -126,6 +126,7 @@ failedJobNotificationsEnabled, cdhVersion;
                                                   selector:@selector(refresh:)
                                                   userInfo:nil
                                                    repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:refreshTimer forMode:NSRunLoopCommonModes];
 }
 
 
@@ -157,7 +158,7 @@ failedJobNotificationsEnabled, cdhVersion;
 - (IBAction)refresh:(id)sender {
     #pragma unused (sender)
     [self startRefresh];
-    [jtState refresh];
+    [jtState performSelectorInBackground:@selector(refresh) withObject:nil];
     if (jtState.currentError) {
         [self setError:jtState.currentError];
     } else {
