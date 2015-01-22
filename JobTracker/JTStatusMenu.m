@@ -35,9 +35,8 @@ failedJobNotificationsEnabled, cdhVersion;
     [self loadPreferences];
     if ([self isConfigured]) {
         jtState = [JTState sharedInstance];
-
+        [jtState setUsernameString:usernames];
         jtState.urls = [self getJtUrls];
-
         jtState.delegate = self;
         [self refresh:nil];
         [self startTimer];
