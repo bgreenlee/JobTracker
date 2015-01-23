@@ -19,8 +19,8 @@
                                                                    options:NSXMLDocumentTidyHTML
                                                                      error:nil];
     jtState = [JTState sharedInstance];
-    jtState.url = fileUrl;
-    [jtState pageLoaded:document];
+    jtState.urls = @[fileUrl];
+    [jtState parseCDH4:document];
 }
 
 - (void)tearDown { 
@@ -42,22 +42,22 @@
                                 @"1000", @"running_map_tasks",
                                 @"528", @"running_reduce_tasks",
                                 @"110129", @"total_submissions", nil];
-    STAssertTrue([jtState.clusterSummary isEqualToDictionary:answerDict], @"Cluster summary incorrect");
+    XCTAssertTrue([jtState.clusterSummary isEqualToDictionary:answerDict], @"Cluster summary incorrect");
 }
 
 - (void)testRunningJobs {
     NSArray *jobs = [jtState.jobs objectForKey:@"running"];
-    STAssertTrue([jobs count] == 2, @"Incorrect job count");
+    XCTAssertTrue([jobs count] == 2, @"Incorrect job count");
 }
 
 - (void)testCompletedJobs {
     NSArray *jobs = [jtState.jobs objectForKey:@"completed"];
-    STAssertTrue([jobs count] == 2, @"Incorrect job count");
+    XCTAssertTrue([jobs count] == 2, @"Incorrect job count");
 }
 
 - (void)testFailedJobs {
     NSArray *jobs = [jtState.jobs objectForKey:@"failed"];
-    STAssertTrue([jobs count] == 1, @"Incorrect job count");
+    XCTAssertTrue([jobs count] == 1, @"Incorrect job count");
 }
 
 @end

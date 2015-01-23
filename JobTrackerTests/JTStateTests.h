@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 Hack Arts. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import "JTState.h"
 
-@interface JTStateTests : SenTestCase {
+@interface JTStateTests : XCTestCase {
     JTState *jtState;
 }
 

@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 Hack Arts. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 #import <Foundation/Foundation.h>
 #import "JTJob.h"
 
-@interface JTJobTests : SenTestCase
+@interface JTJobTests : XCTestCase
 
 @end

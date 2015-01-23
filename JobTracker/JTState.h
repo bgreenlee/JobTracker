@@ -10,7 +10,6 @@
 #import "JTJob.h"
 
 @interface JTState : NSObject {
-  	NSOperationQueue *queue;
     NSArray *lastRunningJobs;
     BOOL refreshRunning;
 }
@@ -26,6 +25,8 @@
 - (void)setUsernameString:(NSString *)usernames;
 - (void)refresh;
 - (void)parse:(NSXMLDocument *)document;
+- (void)parseCDH4:(NSXMLDocument *)document;
+- (void)parseCDH5:(NSXMLDocument *)document;
 @end
 
 @protocol JTStateDelegate

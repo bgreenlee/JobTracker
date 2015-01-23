@@ -37,7 +37,6 @@
 		A2E2CFA21634F40100CAF8F9 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFA01634F40100CAF8F9 /* Credits.rtf */; };
 		A2E2CFA51634F40100CAF8F9 /* JTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */; };
 		A2E2CFA81634F40100CAF8F9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFA61634F40100CAF8F9 /* MainMenu.xib */; };
-		A2E2CFB01634F40100CAF8F9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */; };
 		A2E2CFB11634F40100CAF8F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E2CF911634F40100CAF8F9 /* Cocoa.framework */; };
 		A2E2CFB91634F40100CAF8F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2E2CFB71634F40100CAF8F9 /* InfoPlist.strings */; };
 		A2E2CFBC1634F40100CAF8F9 /* JTStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A2E2CFBB1634F40100CAF8F9 /* JTStateTests.m */; };
@@ -116,8 +115,7 @@
 		A2E2CFA31634F40100CAF8F9 /* JTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTAppDelegate.h; sourceTree = "<group>"; };
 		A2E2CFA41634F40100CAF8F9 /* JTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTAppDelegate.m; sourceTree = "<group>"; };
 		A2E2CFA71634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobTrackerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2E2CFB61634F40100CAF8F9 /* JobTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JobTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		A2E2CFB81634F40100CAF8F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A2E2CFBA1634F40100CAF8F9 /* JTStateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTStateTests.h; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E2CFB01634F40100CAF8F9 /* SenTestingKit.framework in Frameworks */,
 				A2E2CFB11634F40100CAF8F9 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A2E2CF8D1634F40100CAF8F9 /* JobTracker.app */,
-				A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */,
+				A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 				A28B8BCD1A6C193E009676D0 /* Sparkle.framework */,
 				A2614FF71741E6B300D3E717 /* Growl.framework */,
 				A2E2CF911634F40100CAF8F9 /* Cocoa.framework */,
-				A2E2CFAF1634F40100CAF8F9 /* SenTestingKit.framework */,
 				A2E2CF931634F40100CAF8F9 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -348,8 +344,8 @@
 			);
 			name = JobTrackerTests;
 			productName = JobTrackerTests;
-			productReference = A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = A2E2CFAE1634F40100CAF8F9 /* JobTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -664,13 +660,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JobTracker.app/Contents/MacOS/JobTracker";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTrackerTests/JobTrackerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -679,13 +677,15 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JobTracker.app/Contents/MacOS/JobTracker";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JobTracker/JobTracker-Prefix.pch";
 				INFOPLIST_FILE = "JobTrackerTests/JobTrackerTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

@@ -29,7 +29,6 @@ static JTState *shared;
     if ((self = [super init])) {
         clusterSummary = [[NSMutableDictionary alloc] init];
         jobs = [[NSMutableDictionary alloc] init];
-        queue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
